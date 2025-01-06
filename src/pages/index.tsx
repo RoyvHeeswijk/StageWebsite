@@ -9,7 +9,7 @@ export default function Home() {
         <Navbar />
       </div>
       <section id="home" className="relative h-screen flex flex-col">
-        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-8xl font-bold text-white">ROY v HEESWIJK</h1>
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-9xl font-black text-white">ROY v HEESWIJK</h1>
         <div className="flex-1 flex">
           <div className="w-1/2 bg-[#1E1E1E] flex items-center justify-center">
            
@@ -75,19 +75,19 @@ export default function Home() {
               element?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
-            <span className=" text-2xl font-bold mb-2 text-white">ABOUT ME</span>
-            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
-            <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+            <span className=" text-2xl font-bold mb-2 text-black">ABOUT ME</span>
+            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
+            <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
           </div>
        
       </section>
 
       <section id="about" className="h-screen flex">
         <div className="w-2/3 bg-[#4B5EAB] p-8 md:p-12 flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-1 md:mb-8 text-white">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-1 md:mb-8 text-black">
             ABOUT ME
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-white">
+          <p className="text-base md:text-lg lg:text-xl text-black">
             Ik ben Roy van Heeswijk en ik ben 19 jaar oud, ik studeer ICT & Media Design bij Fontys in Tilburg.
           </p>
         </div>

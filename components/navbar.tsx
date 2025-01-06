@@ -35,7 +35,7 @@ export default function Navbar() {
 
     return (
         <nav className="sticky top-0 bg-transparent">
-            <div className={`px-8 transition-all duration-300 ${isScrolled ? 'w-full' : 'w-1/2'}`}>
+            <div className={`px-8j transition-all duration-300 ${isScrolled ? 'w-full' : 'w-1/2'}`}>
                 <div className="flex justify-between items-center h-16">
               
                     <div className="flex gap-8 ml-8">
