@@ -39,7 +39,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-16">
               
                     <div className="flex gap-8 ml-8">
-                        <NavItem text="HOME" href="#home" />
+                        <NavItem text="ROY v HEESWIJK" href="#home" />
                         <NavItem text="PROJECTS" href="#projects" />
                         <NavItem text="ABOUT ME" href="#about" />
                     </div>

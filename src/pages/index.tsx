@@ -8,10 +8,11 @@ export default function Home() {
       <div className="fixed top-0 w-full z-50">
         <Navbar />
       </div>
-      <section id="home" className="h-screen flex flex-col">
+      <section id="home" className="relative h-screen flex flex-col">
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-8xl font-bold text-white">ROY v HEESWIJK</h1>
         <div className="flex-1 flex">
           <div className="w-1/2 bg-[#1E1E1E] flex items-center justify-center">
-            <h1 className="text-8xl font-bold text-white">ROY v</h1>
+           
           </div>
           <div className="w-1/2 relative">
             <Image
@@ -20,23 +21,22 @@ export default function Home() {
               fill
               className="object-cover"
             />
-            <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white">
-              HEESWIJK
-            </h1>
+           
           </div>
         </div>
-        <div className="flex justify-center gap-12 py-8 bg-white">
+        
           <div
-            className="flex flex-col items-center cursor-pointer group"
+            className="absolute left-1/2 bottom-10 flex flex-col items-center cursor-pointer group"
             onClick={() => {
               const element = document.querySelector('#projects')
               element?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
-            <span className="text-2xl font-bold mb-2 text-black">PROJECTS</span>
-            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
+            <span className=" text-2xl font-bold mb-2 text-white">PROJECTS</span>
+            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+            <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
           </div>
-        </div>
+        
       </section>
 
       <section id="projects" className=" relative h-screen flex flex-col">
@@ -53,7 +53,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="w-2/3 flex flex-col">
-            <div className="h-4/5 bg-gray-200 p-8 grid grid-cols-2 gap-8">
+            <div className="h-9/10 bg-gray-200 p-8 grid grid-cols-2 gap-8">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="bg-white p-4 rounded-lg">
                   <h3 className="text-xl font-semibold mb-4 text-black">Sphere using Three.js</h3>
@@ -67,18 +67,19 @@ export default function Home() {
 
           
         </div>
-        <div className="flex justify-center gap-12 py-8 bg-gray-200">
+      
           <div
-            className="flex flex-col items-center cursor-pointer group"
+            className="absolute left-1/2 bottom-10 flex flex-col items-center cursor-pointer group"
             onClick={() => {
               const element = document.querySelector('#about')
               element?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
-            <span className=" absolute bottom-28 text-2xl font-bold mb-2 text-black">ABOUT ME</span>
-            <ChevronDown className=" absolute bottom-20 w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
+            <span className=" text-2xl font-bold mb-2 text-white">ABOUT ME</span>
+            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+            <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
           </div>
-        </div>
+       
       </section>
 
       <section id="about" className="h-screen flex">
