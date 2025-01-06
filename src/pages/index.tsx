@@ -5,8 +5,9 @@ import { ChevronDown } from 'lucide-react'
 export default function Home() {
   return (
     <main className="w-full">
-      <Navbar />
-
+      <div className="fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
       <section id="home" className="h-screen flex flex-col">
         <div className="flex-1 flex">
           <div className="w-1/2 bg-[#1E1E1E] flex items-center justify-center">
@@ -38,7 +39,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="h-screen flex flex-col">
+      <section id="projects" className=" relative h-screen flex flex-col">
         <div className="flex-1 flex">
           <div className="w-1/3 bg-white relative overflow-hidden">
             <Image
@@ -47,20 +48,26 @@ export default function Home() {
               fill
               className="object-cover"
             />
-            <h2 className="absolute top-1/2 right-0 transform translate-y-1/2 rotate-90 origin-right text-7xl font-bold text-white">
+            <h2 className="absolute right-0 transform  origin-right text-7xl font-bold text-white">
               PROJECTS
             </h2>
           </div>
-          <div className="w-2/3 bg-[#E6E6E6] p-8 grid grid-cols-2 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-white p-4 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4 text-black">Sphere using Three.js</h3>
-                <div className="aspect-video bg-gray-200 rounded-lg" />
-              </div>
-            ))}
+          <div className="w-2/3 flex flex-col">
+            <div className="h-4/5 bg-gray-200 p-8 grid grid-cols-2 gap-8">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="bg-white p-4 rounded-lg">
+                  <h3 className="text-xl font-semibold mb-4 text-black">Sphere using Three.js</h3>
+                  <div className="aspect-video bg-gray-200 rounded-lg" />
+                </div>
+              ))}
+            </div>
+            <div className="h-1/5 bg-gray-200 p-8 grid grid-cols-2 gap-8">
+            </div>
           </div>
+
+          
         </div>
-        <div className="flex justify-center gap-12 py-8 bg-white">
+        <div className="flex justify-center gap-12 py-8 bg-gray-200">
           <div
             className="flex flex-col items-center cursor-pointer group"
             onClick={() => {
@@ -68,8 +75,8 @@ export default function Home() {
               element?.scrollIntoView({ behavior: 'smooth' })
             }}
           >
-            <span className="text-2xl font-bold mb-2 text-black">ABOUT ME</span>
-            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
+            <span className=" absolute bottom-28 text-2xl font-bold mb-2 text-black">ABOUT ME</span>
+            <ChevronDown className=" absolute bottom-20 w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
           </div>
         </div>
       </section>

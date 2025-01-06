@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 interface NavItemProps {
     text: string
@@ -34,18 +34,12 @@ export default function Navbar() {
     }, [])
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-                }`}
-        >
-            <div className="container mx-auto px-4">
+        <nav className="sticky top-0 bg-transparent">
+            <div className={`px-8 transition-all duration-300 ${isScrolled ? 'w-full' : 'w-1/2'}`}>
                 <div className="flex justify-between items-center h-16">
-                    <div className="text-xl font-bold">
-                        Roy v Heeswijk
-                    </div>
-                    <div className="flex space-x-8">
-                        <NavItem text="HOME" href="#home" /> 
-                    
+              
+                    <div className="flex gap-8 ml-8">
+                        <NavItem text="HOME" href="#home" />
                         <NavItem text="PROJECTS" href="#projects" />
                         <NavItem text="ABOUT ME" href="#about" />
                     </div>
@@ -54,5 +48,3 @@ export default function Navbar() {
         </nav>
     )
 }
-
-
