@@ -102,45 +102,34 @@ export default function Home() {
           </div>
         
       </section>
-
-      <section id="projects" className=" relative h-screen flex flex-col">
-        <div className="flex-1 flex">
-          <div className="w-1/3 bg-white relative overflow-hidden">
-            <Image
-              src="/miezelf.png"
-              alt="Project background"
-              fill
-              className="object-cover"
-            />
-            <h2 className="absolute right-0 transform origin-right text-7xl font-['American_Captain'] font-bold text-white">
-              PROJECTS
-            </h2>
-          </div>
-          <div className="w-2/3 flex flex-col">
-            <div className="h-9/10 bg-gray-200 p-8 grid grid-cols-2 gap-8">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-white p-4 rounded-lg">
-                  <h3 className="text-xl font-['Arial'] mb-4 text-black">Sphere using Three.js</h3>
-                  <div className="aspect-video bg-gray-200 rounded-lg" />
+      <section id="projects" className="relative h-[90vh] flex flex-col bg-[#0B2544]">
+        <h2 className="text-7xl font-['American_Captain'] font-bold text-white text-center mt-8 mb-12">
+          PROJECTS
+        </h2>
+        <div className="flex-1 mx-[15%] flex items-start">
+          <div className="w-full">
+            <div className="grid grid-cols-4 gap-8">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <div key={i} className="bg-slate-600/20 p-4 rounded-lg">
+                  <h3 className="text-xl font-['American_Captain'] mb-4 text-white">Sphere using Three.js</h3>
+                  <div className="aspect-video bg-gray-700 rounded-lg" />
                 </div>
               ))}
-            </div>
-            <div className="h-1/10 bg-gray-200 p-8 grid grid-cols-2 gap-8">
             </div>
           </div>
         </div>
       
-          <div
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2  flex flex-col items-center cursor-pointer group"
-            onClick={() => {
-              const element = document.querySelector('#about')
-              element?.scrollIntoView({ behavior: 'smooth' })
-            }}
-          >
-            <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-black">ABOUT ME</span>
-            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
-            <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-black" />
-          </div>
+        <div
+          className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+          onClick={() => {
+            const element = document.querySelector('#about')
+            element?.scrollIntoView({ behavior: 'smooth' })
+          }}
+        >
+          <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">ABOUT ME</span>
+          <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+        </div>
        
       </section>
 
