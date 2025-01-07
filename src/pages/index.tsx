@@ -15,7 +15,14 @@ function NavItem({ text, href }: NavItemProps) {
       className="cursor-pointer hover:text-gray-600 transition-colors px-8"
       onClick={() => {
         const element = document.querySelector(href)
-        element?.scrollIntoView({ behavior: 'smooth' })
+        if (element) {
+          const navbarHeight = 100 // Height of navbar
+          const offset = element.getBoundingClientRect().top + window.scrollY - navbarHeight
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+          })
+        }
       }}
     >
       <span className="text-4xl font-['American_Captain'] font-regular">{text}</span>
@@ -76,10 +83,17 @@ export default function Home() {
         </div>
         
           <div
-            className="absolute left-1/2 bottom-10 flex flex-col items-center cursor-pointer group"
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-10 flex flex-col items-center cursor-pointer group"
             onClick={() => {
               const element = document.querySelector('#projects')
-              element?.scrollIntoView({ behavior: 'smooth' })
+              if (element) {
+                const navbarHeight = 100 // Height of navbar
+                const offset = element.getBoundingClientRect().top + window.scrollY - navbarHeight
+                window.scrollTo({
+                  top: offset,
+                  behavior: 'smooth'
+                })
+              }
             }}
           >
             <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
@@ -111,15 +125,13 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="h-1/5 bg-gray-200 p-8 grid grid-cols-2 gap-8">
+            <div className="h-1/10 bg-gray-200 p-8 grid grid-cols-2 gap-8">
             </div>
           </div>
-
-          
         </div>
       
           <div
-            className="absolute left-1/2 bottom-10 flex flex-col items-center cursor-pointer group"
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2  flex flex-col items-center cursor-pointer group"
             onClick={() => {
               const element = document.querySelector('#about')
               element?.scrollIntoView({ behavior: 'smooth' })
