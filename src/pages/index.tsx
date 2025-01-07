@@ -14,12 +14,11 @@ function NavItem({ text, href }: NavItemProps) {
     <div
       className="cursor-pointer hover:text-gray-600 transition-colors px-8"
       onClick={() => {
-        const element = document.querySelector(href)
+        const element = document.querySelector(href) as HTMLElement
         if (element) {
           const navbarHeight = 100 // Height of navbar
-          const offset = element.getBoundingClientRect().top + window.scrollY - navbarHeight
           window.scrollTo({
-            top: offset,
+            top: element.offsetTop - navbarHeight,
             behavior: 'smooth'
           })
         }
@@ -60,6 +59,44 @@ function Navbar() {
 }
 
 export default function Home() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section')
+      const navbarHeight = 100
+
+      let currentSection: HTMLElement | null = null
+      let minDistance = Infinity
+
+      sections.forEach(section => {
+        const htmlSection = section as HTMLElement
+        const distance = Math.abs(htmlSection.offsetTop - (window.scrollY + navbarHeight))
+        if (distance < minDistance) {
+          minDistance = distance
+          currentSection = htmlSection
+        }
+      })
+
+      if (currentSection) {
+        const offset = currentSection.offsetTop - navbarHeight
+        if (Math.abs(window.scrollY - offset) > 50) { // Add threshold to prevent constant snapping
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+          })
+        }
+      }
+    }
+
+    let scrollTimeout: NodeJS.Timeout
+    const throttledScroll = () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(handleScroll, 50) // Add debounce to improve performance
+    }
+
+    window.addEventListener('scroll', throttledScroll)
+    return () => window.removeEventListener('scroll', throttledScroll)
+  }, [])
+
   return (
     <main className="w-full">
       <div className="fixed top-0 w-full z-50">
@@ -69,7 +106,7 @@ export default function Home() {
         <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-8xl font-black text-white font-['American_Captain'] font-bold">ROY v HEESWIJK</h1>
         <div className="flex-1 flex">
           <div className="w-1/2 bg-[#1E1E1E] flex items-center justify-center">
-           
+
           </div>
           <div className="w-1/2 relative">
             <Image
@@ -78,29 +115,28 @@ export default function Home() {
               fill
               className="object-cover"
             />
-           
+
           </div>
         </div>
-        
-          <div
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-10 flex flex-col items-center cursor-pointer group"
-            onClick={() => {
-              const element = document.querySelector('#projects')
-              if (element) {
-                const navbarHeight = 100 // Height of navbar
-                const offset = element.getBoundingClientRect().top + window.scrollY - navbarHeight
-                window.scrollTo({
-                  top: offset,
-                  behavior: 'smooth'
-                })
-              }
-            }}
-          >
-            <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
-            <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
-            <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
-          </div>
-        
+
+        <div
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-10 flex flex-col items-center cursor-pointer group"
+          onClick={() => {
+            const element = document.querySelector('#projects') as HTMLElement
+            if (element) {
+              const navbarHeight = 100 // Height of navbar
+              window.scrollTo({
+                top: element.offsetTop - navbarHeight,
+                behavior: 'smooth'
+              })
+            }
+          }}
+        >
+          <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
+          <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+        </div>
+
       </section>
       <section id="projects" className="relative h-[90vh] flex flex-col bg-[#0B2544]">
         <h2 className="text-7xl font-['American_Captain'] font-bold text-white text-center mt-8 mb-12">
@@ -118,19 +154,25 @@ export default function Home() {
             </div>
           </div>
         </div>
-      
+
         <div
           className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
           onClick={() => {
-            const element = document.querySelector('#about')
-            element?.scrollIntoView({ behavior: 'smooth' })
+            const element = document.querySelector('#about') as HTMLElement
+            if (element) {
+              const navbarHeight = 100 // Height of navbar
+              window.scrollTo({
+                top: element.offsetTop - navbarHeight,
+                behavior: 'smooth'
+              })
+            }
           }}
         >
           <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">ABOUT ME</span>
           <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
           <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
         </div>
-       
+
       </section>
 
       <section id="about" className="h-screen flex">
