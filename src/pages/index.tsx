@@ -174,24 +174,35 @@ export default function Home() {
         </div>
 
       </section>
-
-      <section id="about" className="h-screen flex">
-        <div className="w-2/3 bg-[#4B5EAB] p-8 md:p-12 flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-['American_Captain'] font-bold mb-1 md:mb-8 text-black">
-            ABOUT ME
-          </h2>
-          <p className="text-base md:text-lg lg:text-xl font-['American_Captain'] font-bold text-black">
+      <section id="about" className="min-h-screen bg-[#1E1E1E] text-white p-8">
+        {/* About Me Section */}
+        <div className="mb-24">
+          <h1 className="text-7xl font-['American_Captain'] font-bold text-center mb-8">ABOUT ME</h1>
+          <p className="text-center text-xl max-w-3xl mx-auto">
             Ik ben Roy van Heeswijk en ik ben 19 jaar oud, ik studeer ICT & Media Design bij Fontys in Tilburg.
           </p>
         </div>
-        <div className="w-1/3 relative">
-          <Image
-            src="/ikzelf.png"
-            alt="About background"
-            fill
-            className="object-cover"
-          />
+
+        {/* Skills Section */}
+        <div>
+          <h2 className="text-7xl font-['American_Captain'] font-bold text-center mb-16">SKILLS</h2>
+          <div className="flex justify-center items-center gap-16 flex-wrap">
+            {[...Array(6)].map((_, index) => (
+              <div
+                key={index}
+                className="w-24 h-28 bg-amber-400 relative clip-path-shield flex items-center justify-center"
+              >
+                <span className="text-4xl font-bold text-white">S</span>
+              </div>
+            ))}
+          </div>
         </div>
+
+        <style jsx>{`
+          .clip-path-shield {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          }
+        `}</style>
       </section>
     </main>
   )
