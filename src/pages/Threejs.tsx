@@ -45,11 +45,11 @@ function Navbar() {
             <div className="px-4 sm:px-8 md:px-12 transition-all duration-300 w-full">
                 <div className="flex items-center justify-between h-[100px]">
                     <div className="pl-4 sm:pl-12 md:pl-24">
-                        <NavItem text="ROY v HEESWIJK" href="#home" />
+                        <NavItem text="ROY v HEESWIJK" href="/index" />
                     </div>
                     <div className="flex gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-12 md:pr-24">
-                        <NavItem text="PROJECTS" href="#projects" />
-                        <NavItem text="ABOUT ME" href="#about" />
+                        <NavItem text="OTHER PROJECTS" href="#otherprojects" />
+                     
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@ export default function ThreeJS() {
                 </p>
             </section>
 
-            <section className="bg-black py-24">
+            <section id="otherprojects" className="bg-black py-24">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4 text-white">OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />
