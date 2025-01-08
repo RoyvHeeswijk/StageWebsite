@@ -12,7 +12,7 @@ interface NavItemProps {
 function NavItem({ text, href }: NavItemProps) {
   return (
     <div
-      className="cursor-pointer hover:text-gray-600 transition-colors px-8"
+      className="cursor-pointer hover:text-gray-600 transition-colors px-4 sm:px-8"
       onClick={() => {
         const element = document.querySelector(href) as HTMLElement
         if (element) {
@@ -24,7 +24,7 @@ function NavItem({ text, href }: NavItemProps) {
         }
       }}
     >
-      <span className="text-4xl font-['American_Captain'] font-regular">{text}</span>
+      <span className="text-2xl sm:text-3xl md:text-4xl font-['American_Captain'] font-regular">{text}</span>
     </div>
   )
 }
@@ -43,12 +43,12 @@ function Navbar() {
 
   return (
     <nav className={`sticky top-0 transition-colors duration-300 ${isScrolled ? 'bg-[#1E1E1E]' : 'bg-transparent'}`}>
-      <div className="px-12 transition-all duration-300 w-full">
+      <div className="px-4 sm:px-8 md:px-12 transition-all duration-300 w-full">
         <div className="flex items-center justify-between h-[100px]">
-          <div className="pl-24">
+          <div className="pl-4 sm:pl-12 md:pl-24">
             <NavItem text="ROY v HEESWIJK" href="#home" />
           </div>
-          <div className="flex gap-16 pr-24">
+          <div className="flex gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-12 md:pr-24">
             <NavItem text="PROJECTS" href="#projects" />
             <NavItem text="ABOUT ME" href="#about" />
           </div>
@@ -103,19 +103,17 @@ export default function Home() {
         <Navbar />
       </div>
       <section id="home" className="relative h-screen flex flex-col">
-        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-8xl font-black text-white font-['American_Captain'] font-bold">ROY v HEESWIJK</h1>
-        <div className="flex-1 flex">
-          <div className="w-1/2 bg-[#1E1E1E] flex items-center justify-center">
-
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold">ROY v HEESWIJK</h1>
+        <div className="flex-1 flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2 bg-[#1E1E1E] flex items-center justify-center min-h-[50vh] md:min-h-0">
           </div>
-          <div className="w-1/2 relative">
+          <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-0">
             <Image
               src="/mijzelf.png"
               alt="Roy v Heeswijk"
               fill
               className="object-cover"
             />
-
           </div>
         </div>
 
@@ -132,23 +130,40 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
-          <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
-          <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <span className="text-xl sm:text-2xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
+          <ChevronDown className="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-white" />
         </div>
-
       </section>
-      <section id="projects" className="relative h-[90vh] flex flex-col bg-[#0B2544]">
-        <h2 className="text-7xl font-['American_Captain'] font-bold text-white text-center mt-8 mb-12">
+      <section id="projects" className="relative min-h-[90vh] flex flex-col bg-white">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-black text-center mt-8 mb-12">
           PROJECTS
         </h2>
-        <div className="flex-1 mx-[15%] flex items-start">
-          <div className="w-full">
-            <div className="grid grid-cols-4 gap-8">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <div key={i} className="bg-slate-600/20 p-4 rounded-lg">
-                  <h3 className="text-xl font-['American_Captain'] mb-4 text-white">Sphere using Three.js</h3>
-                  <div className="aspect-video bg-gray-700 rounded-lg" />
+        <div className="flex-1 mx-4 sm:mx-[10%] md:mx-[15%] flex items-center justify-center -translate-y-[10%]">
+          <div className="w-full h-full max-w-[1000px]">
+            <div className="grid grid-cols-2 gap-4 sm:gap-8 place-items-center">
+              {[1, 2, 3, 4].map((i) => (
+                <div 
+                  key={i} 
+                  className={`w-[40vw] sm:w-[25vw] h-[25vh] bg-slate-600/20 p-4 rounded-lg flex flex-row items-start ${i === 1 ? 'cursor-pointer hover:bg-slate-600/30 transition-colors' : ''}`}
+                  onClick={() => {
+                    if (i === 1) {
+                      window.location.href = '/Threejs'
+                    }
+                  }}
+                >
+                  <div className="ml-[5%] w-[50%] flex flex-col">
+                    <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-black">Sphere using Three.js</h3>
+                    <p className="text-[0.65rem] sm:text-xs md:text-sm text-gray-600 mt-2 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                  </div>
+                  <div className="relative w-[35%] h-full mx-[5%]">
+                    <Image
+                      src="/ikzelf.png"
+                      alt="Project"
+                      fill
+                      className="object-contain rounded-lg"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -168,31 +183,30 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-2xl font-['American_Captain'] font-bold mb-2 text-white">ABOUT ME</span>
-          <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
-          <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <span className="text-lg sm:text-2xl font-['American_Captain'] font-bold mb-2 text-black">ABOUT ME</span>
+          <ChevronDown className="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
+          <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
         </div>
-
       </section>
-      <section id="about" className="min-h-screen bg-[#1E1E1E] text-white p-8">
+      <section id="about" className="min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8">
         {/* About Me Section */}
-        <div className="mb-24">
-          <h1 className="text-7xl font-['American_Captain'] font-bold text-center mb-8">ABOUT ME</h1>
-          <p className="text-center text-xl max-w-3xl mx-auto">
+        <div className="mb-12 sm:mb-16 md:mb-24">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-4 sm:mb-6 md:mb-8">ABOUT ME</h1>
+          <p className="text-center text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Ik ben Roy van Heeswijk en ik ben 19 jaar oud, ik studeer ICT & Media Design bij Fontys in Tilburg.
           </p>
         </div>
 
         {/* Skills Section */}
         <div>
-          <h2 className="text-7xl font-['American_Captain'] font-bold text-center mb-16">SKILLS</h2>
-          <div className="flex justify-center items-center gap-16 flex-wrap">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8 sm:mb-12 md:mb-16">SKILLS</h2>
+          <div className="flex justify-center items-center gap-8 sm:gap-12 md:gap-16 flex-wrap">
             {[...Array(6)].map((_, index) => (
               <div
                 key={index}
-                className="w-24 h-28 bg-amber-400 relative clip-path-shield flex items-center justify-center"
+                className="w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 bg-amber-400 relative clip-path-shield flex items-center justify-center"
               >
-                <span className="text-4xl font-bold text-white">S</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">S</span>
               </div>
             ))}
           </div>
