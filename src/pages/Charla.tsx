@@ -80,7 +80,7 @@ export default function Charla() {
                     {/* <source src="/portfoliogif3.mp4" type="video/mp4" /> */}
                 </video>
                 <div className="relative z-10 -ml-10">
-                    <h1 className="text-7xl font-bold text-white">CHARLA</h1>
+                    <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold">Charla</h1>
                 </div>
             </section>
 
