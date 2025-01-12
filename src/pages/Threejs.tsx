@@ -129,12 +129,16 @@ export default function ThreeJS() {
                             onClick={() => {
                                 if (i === 1) {
                                     window.location.href = '/Charla'
+                                } else if (i === 2) {
+                                    window.location.href = '/Upendo'
                                 }
                             }}
                         >
                             <div className="h-48 bg-black/50" />
                             <div className="p-4">
-                                <h3 className="text-sm font-mono text-white">{i === 1 ? 'Charla' : 'Sphere using Three.js'}</h3>
+                                <h3 className="text-sm font-mono text-white">
+                                    {i === 1 ? 'Charla' : i === 2 ? 'Upendo' : 'Sphere using Three.js'}
+                                </h3>
                             </div>
                         </div>
                     ))}

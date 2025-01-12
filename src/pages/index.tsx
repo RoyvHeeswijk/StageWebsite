@@ -145,18 +145,20 @@ export default function Home() {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className={`w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start ${i === 1 || i === 2 ? 'cursor-pointer hover:bg-black/80 transition-colors' : ''}`}
+                  className={`w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start ${i === 1 || i === 2 || i === 3 ? 'cursor-pointer hover:bg-black/80 transition-colors' : ''}`}
                   onClick={() => {
                     if (i === 1) {
                       window.location.href = '/Threejs'
                     } else if (i === 2) {
                       window.location.href = '/Charla'
+                    } else if (i === 3) {
+                      window.location.href = '/Upendo'
                     }
                   }}
                 >
                   <div className="ml-[5%] w-[50%] flex flex-col">
                     <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-white">
-                      {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Charla' : 'Sphere using Three.js'}
+                      {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Charla' : i === 3 ? 'Upendo' : 'Sphere using Three.js'}
                     </h3>
                     <p className="text-[0.65rem] sm:text-xs md:text-sm text-white/60 mt-2 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
                   </div>
@@ -173,7 +175,7 @@ export default function Home() {
                       </video>
                     ) : (
                       <Image
-                        src={i === 2 ? "/Charla.png" : "/ikzelf.png"}
+                        src={i === 2 ? "/Charla.png" : i === 3 ? "/Upendo.png" : "/ikzelf.png"}
                         alt="Project"
                         fill
                         className="object-contain rounded-lg -translate-y-2" // Added -translate-y-2 to move image up slightly

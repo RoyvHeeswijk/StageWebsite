@@ -63,7 +63,7 @@ function Navbar() {
     )
 }
 
-export default function Charla() {
+export default function Upendo() {
     return (
         <main className="w-full">
             <div className="fixed top-0 w-full z-50">
@@ -80,15 +80,15 @@ export default function Charla() {
                     {/* <source src="/portfoliogif3.mp4" type="video/mp4" /> */}
                 </video>
                 <div className="relative z-10 -ml-10">
-                    <h1 className="text-7xl font-bold text-white">CHARLA</h1>
+                    <h1 className="text-7xl font-bold text-white">UPENDO</h1>
                 </div>
             </section>
 
             <section id="threejs-content" className="bg-white text-black">
                 <div className="max-w-4xl mx-auto px-6 py-24 text-center">
-                    <h2 className="text-4xl font-bold mb-8">SPEECH-TO-TEXT COMMUNICATION</h2>
+                    <h2 className="text-4xl font-bold mb-8">MODERN WEB DEVELOPMENT</h2>
                     <p className="text-lg mb-8">
-                        Charla is een innovatieve communicatie-applicatie die spraak omzet naar tekst. Door gebruik te maken van Next.js en geavanceerde Speech-to-Text API's, maakt Charla het mogelijk om moeiteloos gesprekken te voeren en te transcriberen.
+                        Upendo is een moderne website ontwikkeld met JavaScript en Tailwind CSS. Door gebruik te maken van Storyblok als headless CMS, biedt Upendo een flexibele en schaalbare oplossing voor content management.
                     </p>
 
                     <video
@@ -102,7 +102,7 @@ export default function Charla() {
                     </video>
 
                     <p className="text-gray-600 mb-12">
-                        Met Charla kun je eenvoudig spreken terwijl de applicatie je woorden real-time omzet naar tekst. Dit maakt communicatie toegankelijker voor iedereen, of je nu een gesprek wilt vastleggen of assistentie nodig hebt bij het communiceren.
+                        Met Upendo kunnen content managers eenvoudig hun content beheren en bijwerken via het Storyblok CMS, terwijl ontwikkelaars profiteren van de kracht van moderne web technologieën zoals Tailwind CSS voor responsive en aantrekkelijk design.
                     </p>
 
                     <div className="bg-zinc-800 p-12 mb-12">
@@ -110,7 +110,7 @@ export default function Charla() {
                     </div>
 
                     <p className="text-gray-600 mb-24">
-                        De applicatie is gebouwd met Next.js voor optimale prestaties en gebruikt een krachtige Speech-to-Text API voor nauwkeurige transcripties. De interface is ontworpen met gebruiksgemak als prioriteit, waardoor iedereen direct aan de slag kan.
+                        De website is gebouwd met JavaScript voor dynamische functionaliteit en Tailwind CSS voor een modern en responsief design. Storyblok zorgt voor een gebruiksvriendelijke content management ervaring en maakt het mogelijk om content eenvoudig te beheren.
                     </p>
                 </div>
             </section>
@@ -130,7 +130,7 @@ export default function Charla() {
                                 if (i === 1) {
                                     window.location.href = '/Threejs'
                                 } else if (i === 2) {
-                                    window.location.href = '/Upendo'
+                                    window.location.href = '/Charla'
                                 }
                             }}
                         >
@@ -149,7 +149,7 @@ export default function Charla() {
                             )}
                             <div className="p-4">
                                 <h3 className="text-sm font-mono text-white">
-                                    {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Upendo' : 'Charla'}
+                                    {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Charla' : 'Upendo'}
                                 </h3>
                             </div>
                         </div>
