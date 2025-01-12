@@ -130,7 +130,7 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-xl sm:text-2xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
+          <span className="text-2xl sm:text-4xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
           <ChevronDown className="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-white" />
           <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-white" />
         </div>
@@ -199,24 +199,23 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-lg sm:text-2xl font-['American_Captain'] font-bold mb-2 text-black">ABOUT ME</span>
+          <span className="text-2xl sm:text-4xl font-['American_Captain'] font-bold mb-2 text-black">ABOUT ME</span>
           <ChevronDown className="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
           <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
         </div>
       </section>
-      <section id="about" className="min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8">
+      <section id="about" className="min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8 flex flex-col justify-start pt-[15vh]">
         {/* About Me Section */}
-        <div className="mb-12 sm:mb-16 md:mb-24">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-4 sm:mb-6 md:mb-8">ABOUT ME</h1>
+        <div className="mb-8 sm:mb-12">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-4 sm:mb-6">ABOUT ME</h1>
           <p className="text-center text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Ik ben Roy van Heeswijk en ik ben 19 jaar oud, ik studeer ICT & Media Design bij Fontys in Tilburg.
           </p>
         </div>
 
-        {/* Skills Section */}
         <div>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8 sm:mb-12 md:mb-16">SKILLS</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto px-4 justify-items-center">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8">SKILLS</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-4">
             {[
               { name: 'HTML', icon: '/icons/html5.svg', url: 'https://html.spec.whatwg.org/' },
               { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg', url: 'https://tailwindcss.com/' },
@@ -232,7 +231,7 @@ export default function Home() {
                 href={skill.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[8vw] aspect-square bg-zinc-800 rounded-lg flex flex-col items-center justify-center gap-2 transition-all hover:bg-zinc-700 hover:scale-105"
+                className="aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
               >
                 <Image
                   src={skill.icon}
