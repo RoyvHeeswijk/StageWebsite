@@ -143,9 +143,9 @@ export default function Home() {
           <div className="w-full h-full max-w-[1000px]">
             <div className="grid grid-cols-2 gap-4 sm:gap-8 place-items-center">
               {[1, 2, 3, 4].map((i) => (
-                <div 
-                  key={i} 
-                  className={`w-[40vw] sm:w-[25vw] h-[25vh] bg-slate-600/20 p-4 rounded-lg flex flex-row items-start ${i === 1 ? 'cursor-pointer hover:bg-slate-600/30 transition-colors' : ''}`}
+                <div
+                  key={i}
+                  className={`w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start ${i === 1 ? 'cursor-pointer hover:bg-black/80 transition-colors' : ''}`}
                   onClick={() => {
                     if (i === 1) {
                       window.location.href = '/Threejs'
@@ -153,16 +153,28 @@ export default function Home() {
                   }}
                 >
                   <div className="ml-[5%] w-[50%] flex flex-col">
-                    <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-black">Sphere using Three.js</h3>
-                    <p className="text-[0.65rem] sm:text-xs md:text-sm text-gray-600 mt-2 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-white">Sphere using Three.js</h3>
+                    <p className="text-[0.65rem] sm:text-xs md:text-sm text-white/60 mt-2 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
                   </div>
                   <div className="relative w-[35%] h-full mx-[5%]">
-                    <Image
-                      src="/ikzelf.png"
-                      alt="Project"
-                      fill
-                      className="object-contain rounded-lg"
-                    />
+                    {i === 1 ? (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover rounded-lg"
+                      >
+                        <source src="/portfoliogif3.mp4" type="video/mp4" />
+                      </video>
+                    ) : (
+                      <Image
+                        src="/ikzelf.png"
+                        alt="Project"
+                        fill
+                        className="object-contain rounded-lg"
+                      />
+                    )}
                   </div>
                 </div>
               ))}
@@ -200,23 +212,38 @@ export default function Home() {
         {/* Skills Section */}
         <div>
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8 sm:mb-12 md:mb-16">SKILLS</h2>
-          <div className="flex justify-center items-center gap-8 sm:gap-12 md:gap-16 flex-wrap">
-            {[...Array(6)].map((_, index) => (
-              <div
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto px-4 justify-items-center">
+            {[
+              { name: 'HTML', icon: '/icons/html5.svg', url: 'https://html.spec.whatwg.org/' },
+              { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg', url: 'https://tailwindcss.com/' },
+              { name: 'CSS', icon: '/icons/css.svg', url: 'https://www.w3.org/Style/CSS/' },
+              { name: 'Figma', icon: '/icons/figma.svg', url: 'https://www.figma.com/' },
+              { name: 'VS Code', icon: '/icons/VScode.png', url: 'https://code.visualstudio.com/' },
+              { name: 'JavaScript', icon: '/icons/javascript.svg', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+              { name: 'Next.js', icon: '/icons/nextdotjs.svg', url: 'https://nextjs.org/' },
+              { name: 'THREE.js', icon: '/icons/threedotjs.svg', url: 'https://threejs.org/' }
+            ].map((skill, index) => (
+              <a
                 key={index}
-                className="w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 bg-amber-400 relative clip-path-shield flex items-center justify-center"
+                href={skill.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[8vw] aspect-square bg-zinc-800 rounded-lg flex flex-col items-center justify-center gap-2 transition-all hover:bg-zinc-700 hover:scale-105"
               >
-                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">S</span>
-              </div>
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={40}
+                  height={40}
+                  className="w-8 h-8 sm:w-10 sm:h-10 brightness-0 invert"
+                />
+                <span className="text-xs sm:text-sm text-center">
+                  {skill.name}
+                </span>
+              </a>
             ))}
           </div>
         </div>
-
-        <style jsx>{`
-          .clip-path-shield {
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-          }
-        `}</style>
       </section>
     </main>
   )
