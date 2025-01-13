@@ -136,6 +136,24 @@ export default function Home() {
         </div>
       </section>
       <section id="projects" className="relative min-h-[90vh] flex flex-col bg-white">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          {/* Geometric shapes */}
+          <div className="absolute w-full h-full overflow-hidden">
+            <div className="absolute top-0 left-0 w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4"></div>
+            <div className="absolute top-1/4 right-0 w-[600px] h-[2px] bg-blue-500/20 -rotate-45"></div>
+            <div className="absolute bottom-1/3 left-0 w-[400px] h-[2px] bg-blue-400/20 rotate-45"></div>
+            
+            {/* Circles */}
+            <div className="absolute top-[20%] left-[10%] w-[100px] h-[100px] border-2 border-blue-500/20 rounded-full"></div>
+            <div className="absolute top-[60%] right-[15%] w-[150px] h-[150px] border-2 border-blue-400/20 rounded-full"></div>
+            
+            {/* Rectangles */}
+            <div className="absolute top-[40%] left-[80%] w-[80px] h-[80px] border-2 border-blue-600/20 rotate-45"></div>
+            <div className="absolute top-[70%] left-[20%] w-[60px] h-[60px] border-2 border-blue-500/20 rotate-12"></div>
+          </div>
+        </div>
+
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-black text-center mt-8 mb-12">
           PROJECTS
         </h2>
@@ -145,7 +163,14 @@ export default function Home() {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className={`w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start ${i === 1 || i === 2 || i === 3 ? 'cursor-pointer hover:bg-black/80 transition-colors' : ''}`}
+                  className={`group w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start relative ${i === 1 || i === 2 || i === 3 ? 'cursor-pointer' : ''}`}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                    e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                  }}
                   onClick={() => {
                     if (i === 1) {
                       window.location.href = '/Threejs'
@@ -155,14 +180,26 @@ export default function Home() {
                       window.location.href = '/Upendo'
                     }
                   }}
+                  style={{
+                    '--mouse-x': '0px',
+                    '--mouse-y': '0px',
+                  } as React.CSSProperties}
                 >
-                  <div className="ml-[5%] w-[50%] flex flex-col">
+                  {/* Spotlight overlay */}
+                  <div 
+                    className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-150 rounded-lg"
+                    style={{
+                      background: 'radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.225), transparent 100%)',
+                    }}
+                  />
+                  
+                  <div className="ml-[5%] w-[50%] flex flex-col relative z-10">
                     <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-white">
                       {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Charla' : i === 3 ? 'Upendo' : 'Sphere using Three.js'}
                     </h3>
                     <p className="text-[0.65rem] sm:text-xs md:text-sm text-white/60 mt-2 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
                   </div>
-                  <div className="relative w-[35%] h-full mx-[5%]">
+                  <div className="relative w-[35%] h-full mx-[5%] z-10">
                     {i === 1 ? (
                       <video
                         autoPlay
@@ -178,7 +215,7 @@ export default function Home() {
                         src={i === 2 ? "/Charla.png" : i === 3 ? "/Upendo.png" : "/ikzelf.png"}
                         alt="Project"
                         fill
-                        className="object-contain rounded-lg -translate-y-2" // Added -translate-y-2 to move image up slightly
+                        className="object-contain rounded-lg -translate-y-2"
                       />
                     )}
                   </div>
@@ -206,16 +243,34 @@ export default function Home() {
           <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
         </div>
       </section>
-      <section id="about" className="min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8 flex flex-col justify-start pt-[15vh]">
+      <section id="about" className="relative min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8 flex flex-col justify-start pt-[15vh]">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 bg-[#1E1E1E]">
+          {/* Geometric shapes */}
+          <div className="absolute w-full h-full overflow-hidden">
+            <div className="absolute top-0 left-0 w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4"></div>
+            <div className="absolute top-1/4 right-0 w-[600px] h-[3px] bg-gray-300/35 -rotate-45"></div>
+            <div className="absolute bottom-1/3 left-0 w-[400px] h-[3px] bg-gray-300/35 rotate-45"></div>
+            
+            {/* Circles */}
+            <div className="absolute top-[20%] left-[10%] w-[100px] h-[100px] border-[3px] border-gray-300/35 rounded-full"></div>
+            <div className="absolute top-[60%] right-[15%] w-[150px] h-[150px] border-[3px] border-gray-300/35 rounded-full"></div>
+            
+            {/* Rectangles */}
+            <div className="absolute top-[40%] left-[80%] w-[80px] h-[80px] border-[3px] border-gray-300/35 rotate-45"></div>
+            <div className="absolute top-[70%] left-[20%] w-[60px] h-[60px] border-[3px] border-gray-300/35 rotate-12"></div>
+          </div>
+        </div>
+
         {/* About Me Section */}
-        <div className="mb-8 sm:mb-12">
+        <div className="relative z-10 mb-8 sm:mb-12">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-4 sm:mb-6">ABOUT ME</h1>
           <p className="text-center text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Ik ben Roy van Heeswijk en ik ben 19 jaar oud, ik studeer ICT & Media Design bij Fontys in Tilburg.
           </p>
         </div>
 
-        <div>
+        <div className="relative z-10">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8">SKILLS</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-4">
             {[
