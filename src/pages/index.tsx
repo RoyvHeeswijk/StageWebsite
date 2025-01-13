@@ -46,9 +46,11 @@ function Navbar() {
       <div className="px-4 sm:px-8 md:px-12 transition-all duration-300 w-full">
         <div className="flex items-center justify-between h-[100px]">
           <div className="pl-4 sm:pl-12 md:pl-24">
-            <NavItem text="ROY v HEESWIJK" href="#home" />
+            <div className="text-[0.8rem] sm:text-base md:text-2xl lg:text-3xl whitespace-nowrap">
+              <NavItem text="ROY v HEESWIJK" href="#home" />
+            </div>
           </div>
-          <div className="flex gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-12 md:pr-24">
+          <div className="flex whitespace-nowrap gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-12 md:pr-24 text-[1rem] sm:text-base md:text-2xl lg:text-3xl">
             <NavItem text="PROJECTS" href="#projects" />
             <NavItem text="ABOUT ME" href="#about" />
           </div>
@@ -102,12 +104,12 @@ export default function Home() {
       <div className="fixed top-0 w-full z-50">
         <Navbar />
       </div>
-      <section id="home" className="relative h-screen flex flex-col">
-        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold">ROY v HEESWIJK</h1>
-        <div className="flex-1 flex flex-col md:flex-row">
-          <div className="w-full md:w-1/2 bg-[#1E1E1E] flex items-center justify-center min-h-[50vh] md:min-h-0">
+      <section id="home" className="relative h-screen">
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl whitespace-nowrap font-black text-white font-['American_Captain'] font-bold">ROY v HEESWIJK</h1>
+        <div className="h-full grid grid-cols-2">
+          <div className="bg-[#1E1E1E] flex items-center justify-center">
           </div>
-          <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-0">
+          <div className="relative">
             <Image
               src="/mijzelf.png"
               alt="Roy v Heeswijk"
@@ -130,9 +132,9 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-2xl sm:text-4xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
-          <ChevronDown className="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-white" />
-          <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <span className="text-4xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
+          <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
+          <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
         </div>
       </section>
       <section id="projects" className="relative min-h-[90vh] flex flex-col bg-white">
@@ -140,17 +142,17 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* Geometric shapes */}
           <div className="absolute w-full h-full overflow-hidden">
-            <div className="absolute top-0 left-0 w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4"></div>
-            <div className="absolute top-1/4 right-0 w-[600px] h-[2px] bg-blue-500/20 -rotate-45"></div>
-            <div className="absolute bottom-1/3 left-0 w-[400px] h-[2px] bg-blue-400/20 rotate-45"></div>
+            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4"></div>
+            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[2px] bg-blue-500/20 -rotate-45"></div>
+            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[2px] bg-blue-400/20 rotate-45"></div>
             
             {/* Circles */}
-            <div className="absolute top-[20%] left-[10%] w-[100px] h-[100px] border-2 border-blue-500/20 rounded-full"></div>
-            <div className="absolute top-[60%] right-[15%] w-[150px] h-[150px] border-2 border-blue-400/20 rounded-full"></div>
+            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-2 border-blue-500/20 rounded-full"></div>
+            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-2 border-blue-400/20 rounded-full"></div>
             
             {/* Rectangles */}
-            <div className="absolute top-[40%] left-[80%] w-[80px] h-[80px] border-2 border-blue-600/20 rotate-45"></div>
-            <div className="absolute top-[70%] left-[20%] w-[60px] h-[60px] border-2 border-blue-500/20 rotate-12"></div>
+            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-2 border-blue-600/20 rotate-45"></div>
+            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-2 border-blue-500/20 rotate-12"></div>
           </div>
         </div>
 
@@ -248,17 +250,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#1E1E1E]">
           {/* Geometric shapes */}
           <div className="absolute w-full h-full overflow-hidden">
-            <div className="absolute top-0 left-0 w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4"></div>
-            <div className="absolute top-1/4 right-0 w-[600px] h-[3px] bg-gray-300/35 -rotate-45"></div>
-            <div className="absolute bottom-1/3 left-0 w-[400px] h-[3px] bg-gray-300/35 rotate-45"></div>
+            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4"></div>
+            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[3px] bg-gray-300/35 -rotate-45"></div>
+            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[3px] bg-gray-300/35 rotate-45"></div>
             
             {/* Circles */}
-            <div className="absolute top-[20%] left-[10%] w-[100px] h-[100px] border-[3px] border-gray-300/35 rounded-full"></div>
-            <div className="absolute top-[60%] right-[15%] w-[150px] h-[150px] border-[3px] border-gray-300/35 rounded-full"></div>
+            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-[3px] border-gray-300/35 rounded-full"></div>
+            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-[3px] border-gray-300/35 rounded-full"></div>
             
             {/* Rectangles */}
-            <div className="absolute top-[40%] left-[80%] w-[80px] h-[80px] border-[3px] border-gray-300/35 rotate-45"></div>
-            <div className="absolute top-[70%] left-[20%] w-[60px] h-[60px] border-[3px] border-gray-300/35 rotate-12"></div>
+            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-[3px] border-gray-300/35 rotate-45"></div>
+            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-[3px] border-gray-300/35 rotate-12"></div>
           </div>
         </div>
 
@@ -272,7 +274,7 @@ export default function Home() {
 
         <div className="relative z-10">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8">SKILLS</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto px-4">
             {[
               { name: 'HTML', icon: '/icons/html5.svg', url: 'https://html.spec.whatwg.org/' },
               { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg', url: 'https://tailwindcss.com/' },
@@ -288,7 +290,7 @@ export default function Home() {
                 href={skill.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
+                className="w-[30%] max-w-[150px] aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
               >
                 <Image
                   src={skill.icon}
