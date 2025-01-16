@@ -16,7 +16,7 @@ function NavItem({ text, href }: NavItemProps) {
       onClick={() => {
         const element = document.querySelector(href) as HTMLElement
         if (element) {
-          const navbarHeight = 100 // Height of navbar
+          const navbarHeight = 100 
           window.scrollTo({
             top: element.offsetTop - navbarHeight,
             behavior: 'smooth'
@@ -156,7 +156,7 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-black text-center mt-8 mb-12">
+        <h2 className="text-[3.6rem] sm:text-[4.5rem] md:text-[4.0rem] font-['American_Captain'] font-bold text-black text-center mt-8 mb-12">
           PROJECTS
         </h2>
         <div className="flex-1 mx-4 sm:mx-[10%] md:mx-[15%] flex items-center justify-center -translate-y-[10%]">
@@ -187,19 +187,24 @@ export default function Home() {
                     '--mouse-y': '0px',
                   } as React.CSSProperties}
                 >
-                  {/* Spotlight overlay */}
-                  <div 
+           
+                  <div
                     className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-150 rounded-lg"
                     style={{
                       background: 'radial-gradient(circle 100px at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.225), transparent 100%)',
                     }}
                   />
-                  
+
                   <div className="ml-[5%] w-[50%] flex flex-col relative z-10">
                     <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-white">
                       {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Charla' : i === 3 ? 'Upendo' : 'Sphere using Three.js'}
                     </h3>
-                    <p className="text-[0.65rem] sm:text-xs md:text-sm text-white/60 mt-2 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <p className="text-[0.65rem] sm:text-xs md:text-sm text-white/60 mt-2 line-clamp-5">
+                      {i === 1 ? 'Dit is een project waarmee ik gebruik maak van THREE.js om een Sphere rond te laten draaien.' :
+                        i === 2 ? 'Dit is een project waarmee ik gebruik maak van Next.js om een Speech-to-text app te maken.' :
+                          i === 3 ? 'Dit is een project waarmee ik gebruik maak van Tailwind CSS & Javascript om een website te maken voor het bedrijf Upendo.' :
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.'}
+                    </p>
                   </div>
                   <div className="relative w-[35%] h-full mx-[5%] z-10">
                     {i === 1 ? (
@@ -245,35 +250,42 @@ export default function Home() {
           <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
         </div>
       </section>
-      <section id="about" className="relative min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8 flex flex-col justify-start pt-[15vh]">
+      <section id="about" className="relative min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8 flex flex-col justify-start pt-[10vh] pb-[10vh]">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-[#1E1E1E]">
           {/* Geometric shapes */}
           <div className="absolute w-full h-full overflow-hidden">
-            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4"></div>
-            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[3px] bg-gray-300/35 -rotate-45"></div>
-            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[3px] bg-gray-300/35 rotate-45"></div>
-            
-            {/* Circles */}
-            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-[3px] border-gray-300/35 rounded-full"></div>
-            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-[3px] border-gray-300/35 rounded-full"></div>
-            
-            {/* Rectangles */}
-            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-[3px] border-gray-300/35 rotate-45"></div>
-            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-[3px] border-gray-300/35 rotate-12"></div>
+            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4 hidden md:block"></div>
+            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[3px] bg-gray-300/35 -rotate-45 hidden md:block"></div>
+            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[3px] bg-gray-300/35 rotate-45 hidden md:block"></div>
+
+            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-[3px] border-gray-300/35 rounded-full hidden md:block"></div>
+            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-[3px] border-gray-300/35 rounded-full hidden md:block"></div>
+
+            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-[3px] border-gray-300/35 rotate-45 hidden md:block"></div>
+            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-[3px] border-gray-300/35 rotate-12 hidden md:block"></div>
           </div>
         </div>
 
-        {/* About Me Section */}
-        <div className="relative z-10 mb-8 sm:mb-12">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-4 sm:mb-6">ABOUT ME</h1>
-          <p className="text-center text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
-            Ik ben Roy van Heeswijk en ik ben 19 jaar oud, ik studeer ICT & Media Design bij Fontys in Tilburg.
+        <div className="relative z-10 mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-[4.0rem] font-['American_Captain'] font-bold text-center mb-3 sm:mb-4">
+            ABOUT ME
+          </h1>
+          <p className="text-center text-[13px] sm:text-lg md:text-[17px] max-w-3xl mx-auto leading-relaxed">
+            Ik ben Roy van Heeswijk, 19 jaar oud en woon in Drunen, waar ik geboren en opgegroeid ben. Ik studeer ICT & Media Design aan Fontys in Tilburg.
+            <br />
+            <br />
+            Met een passie voor technologie en creativiteit werk ik graag aan projecten waarin ik mezelf kan uitdagen en nieuwe dingen kan leren. Op mijn portfolio vind je een overzicht van mijn werk en de stappen die ik maak in mijn ontwikkeling.
+            <br />
+            <br />
+            Hieronder zie je ook waar ik zelf in gevorderd ben. Neem gerust een kijkje!
           </p>
         </div>
 
         <div className="relative z-10">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-['American_Captain'] font-bold text-center mb-8">SKILLS</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-[4.0rem] font-['American_Captain'] font-bold text-center mb-6">
+            SKILLS
+          </h2>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto px-4">
             {[
               { name: 'HTML', icon: '/icons/html5.svg', url: 'https://html.spec.whatwg.org/' },
@@ -307,6 +319,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
     </main>
   )
 }

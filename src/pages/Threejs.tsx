@@ -88,7 +88,7 @@ export default function ThreeJS() {
                 <div className="max-w-4xl mx-auto px-6 py-24 text-center">
                     <h2 className="text-4xl font-bold mb-8">USING THREE JS FOR A SPHERE</h2>
                     <p className="text-lg mb-8">
-                        Voor dit project heb ik gebruik gemaakt van THREE.js om een sphere te kunnen laten roteren. Op deze pagina hier een uitleg over.
+                        Voor dit project heb ik gebruik gemaakt van THREE.js om een sphere te kunnen laten draaien. Het doel van dit project was om te leren om meer te weten te komen over THREE.js en hoe ik het kan gebruiken in mijn projecten. zie hieronder voor het resultaat.
                     </p>
 
                     <video
@@ -102,6 +102,7 @@ export default function ThreeJS() {
                     </video>
 
                     <p className="text-gray-600 mb-12">
+                        Om dit project meer vorm te geven heb ik een  
                         Aenean condimentum lacus et libero imperdiet, id malesuada ante vehicula. Sed dignissim elit suscipit consequat iaculis. Fusce in mauris sit amet felis lobortis lobortis.
                     </p>
 
