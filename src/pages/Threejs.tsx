@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Github, Globe } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -79,45 +79,58 @@ export default function ThreeJS() {
                 >
                     <source src="/portfoliogif3.mp4" type="video/mp4" />
                 </video>
-                <div className="relative z-10 -ml-10">
-                    <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold">Three.js</h1>
-                </div>
-            </section>
-
-            <section id="threejs-content" className="bg-white text-black">
-                <div className="max-w-4xl mx-auto px-6 py-24 text-center">
-                    <h2 className="text-4xl font-bold mb-8">USING THREE JS FOR A SPHERE</h2>
-                    <p className="text-lg mb-8">
-                        Voor dit project heb ik gebruik gemaakt van THREE.js om een sphere te kunnen laten draaien. Het doel van dit project was om te leren om meer te weten te komen over THREE.js en hoe ik het kan gebruiken in mijn projecten. zie hieronder voor het resultaat.
+                <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4">
+                
+                     <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold mb-8">
+                        THREE.JS
+                    </h1>
+                  
+                   
+                    <p className="text-white text-center max-w-2xl mb-12">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.
                     </p>
-
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-[400px] object-cover mb-12"
-                    >
-                        <source src="/portfoliogif3.mp4" type="video/mp4" />
-                    </video>
-
-                    <p className="text-gray-600 mb-12">
-                        Om dit project meer vorm te geven heb ik hieronder een deel van de code toegevoegd. 
-                       
-                    </p>
-
-                    <div className="bg-zinc-800 p-12 mb-12">
-                       
-                        <div className="flex flex-col items-center">
-                            <img src="/Pictures/Three.jscode1.png" alt="Three.jscode1"  />
-                            <img src="/Pictures/Three.jscode2.png" alt="Three.jscode2" />
-                        </div>
+                    <div className="flex justify-center gap-4 w-full">
+                        {[
+                            { name: 'THREE.js', icon: '/icons/threedotjs.svg', url: 'https://threejs.org/' },
+                            { name: 'Tailwind CSS', icon: '/icons/tailwindcss.svg', url: 'https://tailwindcss.com/' },
+                            { name: 'JavaScript', icon: '/icons/javascript.svg', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' }
+                        ].map((skill, index) => (
+                            <a
+                                key={index}
+                                href={skill.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-[8%] aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
+                            >
+                                <img
+                                    src={skill.icon || "/placeholder.svg"}
+                                    alt={skill.name}
+                                    width={40}
+                                    height={40}
+                                    className="w-6 h-6 sm:w-8 sm:h-8 brightness-0 invert"
+                                />
+                                <span className="text-xs text-center text-white">
+                                    {skill.name}
+                                </span>
+                            </a>
+                        ))}
                     </div>
-
-
-                    <p className="text-gray-600 mb-24">
-                        Het eindproduct heb ik online gezet door gebruik te maken van de database die we op school hebben.<br></br> Klik <a href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3/index.html" className="text-blue-500">hier</a> voor het eindproduct.
-                    </p>
+                </div>
+                <div className="absolute bottom-4 right-[20%] z-20 flex space-x-6">
+                    <a
+                        href="https://github.com/RoyvHeeswijk/Sphere"
+                        className="text-white hover:text-blue-300 transition-colors"
+                        aria-label="GitHub Repository"
+                    >
+                        <Github size={36} />
+                    </a>
+                    <a
+                        href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3/index.html"
+                        className="text-white hover:text-blue-300 transition-colors"
+                        aria-label="Live Demo"
+                    >
+                        <Globe size={36} />
+                    </a>
                 </div>
             </section>
 

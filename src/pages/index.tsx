@@ -271,7 +271,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-[4.0rem] font-['American_Captain'] font-bold text-center mb-3 sm:mb-4">
             ABOUT ME
           </h1>
-          <p className="text-center text-[13px] sm:text-lg md:text-[17px] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-center text-[13px] sm:text-lg md:text-[19px] max-w-3xl mx-auto leading-relaxed">
             Ik ben Roy van Heeswijk, 19 jaar oud en woon in Drunen, waar ik geboren en opgegroeid ben. Ik studeer ICT & Media Design aan Fontys in Tilburg.
             <br />
             <br />
