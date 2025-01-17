@@ -102,16 +102,21 @@ export default function ThreeJS() {
                     </video>
 
                     <p className="text-gray-600 mb-12">
-                        Om dit project meer vorm te geven heb ik een  
-                        Aenean condimentum lacus et libero imperdiet, id malesuada ante vehicula. Sed dignissim elit suscipit consequat iaculis. Fusce in mauris sit amet felis lobortis lobortis.
+                        Om dit project meer vorm te geven heb ik hieronder een deel van de code toegevoegd. 
+                       
                     </p>
 
                     <div className="bg-zinc-800 p-12 mb-12">
-                        <p className="text-center text-xl text-white">FOTO VAN CODE</p>
+                       
+                        <div className="flex flex-col items-center">
+                            <img src="/Pictures/Three.jscode1.png" alt="Three.jscode1"  />
+                            <img src="/Pictures/Three.jscode2.png" alt="Three.jscode2" />
+                        </div>
                     </div>
 
+
                     <p className="text-gray-600 mb-24">
-                        Aenean condimentum lacus et libero imperdiet, id malesuada ante vehicula. Sed dignissim elit suscipit consequat iaculis. Fusce in mauris sit amet felis lobortis lobortis.
+                        Het eindproduct heb ik online gezet door gebruik te maken van de database die we op school hebben.<br></br> Klik <a href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3/index.html" className="text-blue-500">hier</a> voor het eindproduct.
                     </p>
                 </div>
             </section>
