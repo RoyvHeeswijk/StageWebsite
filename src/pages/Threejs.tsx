@@ -142,7 +142,7 @@ export default function ThreeJS() {
                
             </section>
 
-            <section id="otherprojects" className="bg-black py-24">
+            <section id="otherprojects" className="bg-[030303] py-24">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4 text-white">OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />
@@ -173,7 +173,7 @@ export default function ThreeJS() {
                                         />
                                     </div>
                                 ) : (
-                                        <div className="h-full w-full flex items-center justify-center">
+                                        <div className="h-full w-full flex items-center justify-center bg-black">
                                             <Image
                                                 src="/Upendo.png"
                                                 alt="Project"

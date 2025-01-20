@@ -142,17 +142,17 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* Geometric shapes */}
           <div className="absolute w-full h-full overflow-hidden">
-            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4"></div>
-            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[2px] bg-blue-500/20 -rotate-45"></div>
-            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[2px] bg-blue-400/20 rotate-45"></div>
+            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4 hidden md:block" ></div>
+            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[2px] bg-blue-500/20 -rotate-45  hidden md:block"></div>
+            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[2px] bg-blue-400/20 rotate-45  hidden md:block"></div>
             
             {/* Circles */}
-            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-2 border-blue-500/20 rounded-full"></div>
-            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-2 border-blue-400/20 rounded-full"></div>
+            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-2 border-blue-500/20 rounded-full hidden md:block"></div>
+            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-2 border-blue-400/20 rounded-full hidden md:block"></div>
             
-            {/* Rectangles */}
-            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-2 border-blue-600/20 rotate-45"></div>
-            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-2 border-blue-500/20 rotate-12"></div>
+            {/* Rectangles */} 
+            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-2 border-blue-600/20 rotate-45 hidden md:block"></div>
+            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-2 border-blue-500/20 rotate-12 hidden md:block"></div>
           </div>
         </div>
 
