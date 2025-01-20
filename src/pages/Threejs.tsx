@@ -3,7 +3,7 @@
 import { ChevronDown, Github, Globe } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-
+import Image from 'next/image'
 interface NavItemProps {
     text: string
     href: string
@@ -139,6 +139,7 @@ export default function ThreeJS() {
                         </div>
                     </div>
                 </div>
+               
             </section>
 
             <section id="otherprojects" className="bg-black py-24">
@@ -160,10 +161,32 @@ export default function ThreeJS() {
                                 }
                             }}
                         >
-                            <div className="h-48 bg-black/50" />
+                            <div className="h-48 w-full relative">
+                                {i === 1 ? (
+                                    <div className="h-full w-full flex items-center justify-center">
+                                        <Image
+                                            src="/Charla.png"
+                                            alt="Project"
+                                            width={200}
+                                            height={200}
+                                            className="max-h-full max-w-full object-contain"
+                                        />
+                                    </div>
+                                ) : (
+                                        <div className="h-full w-full flex items-center justify-center">
+                                            <Image
+                                                src="/Upendo.png"
+                                                alt="Project"
+                                                width={200}
+                                                height={200}
+                                                className="max-h-full max-w-full object-contain"
+                                            />
+                                        </div>
+                                )}
+                            </div>
                             <div className="p-4">
                                 <h3 className="text-sm font-mono text-white">
-                                    {i === 1 ? 'Charla' : i === 2 ? 'Upendo' : 'Sphere using Three.js'}
+                                    {i === 1 ? "Charla" : i === 2 ? "Upendo" : "Charla"}
                                 </h3>
                             </div>
                         </div>

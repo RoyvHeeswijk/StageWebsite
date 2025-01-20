@@ -1,9 +1,9 @@
 'use client'
 
-import { ChevronDown, Github, Globe } from 'lucide-react'
+import { AlignJustify, ChevronDown, Github, Globe } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-
+import Image from 'next/image'
 interface NavItemProps {
     text: string
     href: string
@@ -155,22 +155,26 @@ export default function Upendo() {
                                 }
                             }}
                         >
-                            {i === 1 ? (
-                                <video
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="h-48 w-full object-cover"
-                                >
-                                    <source src="/portfoliogif3.mp4" type="video/mp4" />
-                                </video>
-                            ) : (
-                                <div className="h-48 bg-black/50" />
-                            )}
+                            <div className="h-48 w-full relative">
+                                {i === 1 ? (
+                                    <video autoPlay loop muted playsInline className="h-full w-full object-cover">
+                                        <source src="/portfoliogif3.mp4" type="video/mp4" />
+                                    </video>
+                                ) : (
+                                    <div className="h-full w-full flex items-center justify-center">
+                                        <Image
+                                            src="/Charla.png"
+                                            alt="Project"
+                                            width={200}
+                                            height={200}
+                                            className="max-h-full max-w-full object-contain"
+                                        />
+                                    </div>
+                                )}
+                            </div>
                             <div className="p-4">
                                 <h3 className="text-sm font-mono text-white">
-                                    {i === 1 ? 'Sphere using Three.js' : i === 2 ? 'Charla' : 'Upendo'}
+                                    {i === 1 ? "Sphere using Three.js" : i === 2 ? "Charla" : ""}
                                 </h3>
                             </div>
                         </div>
