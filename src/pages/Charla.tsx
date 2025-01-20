@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Globe, Github } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -69,49 +69,79 @@ export default function Charla() {
             <div className="fixed top-0 w-full z-50">
                 <Navbar />
             </div>
-            <section className="min-h-screen flex flex-col items-center justify-center relative">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                >
-                    {/* <source src="/portfoliogif3.mp4" type="video/mp4" /> */}
-                </video>
-                <div className="relative z-10 -ml-10">
-                    <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold">Charla</h1>
-                </div>
-            </section>
+            <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+              
 
-            <section id="threejs-content" className="bg-white text-black">
-                <div className="max-w-4xl mx-auto px-6 py-24 text-center">
-                    <h2 className="text-4xl font-bold mb-8">SPEECH-TO-TEXT COMMUNICATION</h2>
-                    <p className="text-lg mb-8">
-                        Charla is een innovatieve communicatie-applicatie die spraak omzet naar tekst. Door gebruik te maken van Next.js en geavanceerde Speech-to-Text API's, maakt Charla het mogelijk om moeiteloos gesprekken te voeren en te transcriberen.
-                    </p>
-
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-[400px] object-cover mb-12"
-                    >
-                        <div className="w-full h-full bg-black"></div>
-                    </video>
-
-                    <p className="text-gray-600 mb-12">
-                        Met Charla kun je eenvoudig spreken terwijl de applicatie je woorden real-time omzet naar tekst. Dit maakt communicatie toegankelijker voor iedereen, of je nu een gesprek wilt vastleggen of assistentie nodig hebt bij het communiceren.
-                    </p>
-
-                    <div className="bg-zinc-800 p-12 mb-12">
-                        <p className="text-center text-xl text-white">TECHNISCHE IMPLEMENTATIE</p>
+                <div className="relative z-10 flex w-full h-full">
+                    <div className="flex-[3] flex items-center justify-center">
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            CHARLA
+                        </h1>
                     </div>
 
-                    <p className="text-gray-600 mb-24">
-                        De applicatie is gebouwd met Next.js voor optimale prestaties en gebruikt een krachtige Speech-to-Text API voor nauwkeurige transcripties. De interface is ontworpen met gebruiksgemak als prioriteit, waardoor iedereen direct aan de slag kan.
-                    </p>
+                    <div className="flex-1 flex flex-col justify-center items-start pr-4">
+                        <p className="text-white text-center text-sm md:text-base mb-8">
+                            Voor dit project heb ik gebruik gemaakt van onderstaande skills om een Speech-to-text app te maken.
+                            <br />
+                            <br />
+                            Het doel van dit project was om door gebruik te maken van OPENAI API key een Speech-to-text app te maken waarbij je berichten kunt versturen wat eerst jou spraak was.
+                            <br />
+                            <br />
+                            klik op het github logo of het globe logo hieronder voor het resultaat. <br />
+
+                        </p>
+                       
+                       
+                      
+                       
+                        <div className="flex justify-center gap-4 w-full mb-4">
+                            {[
+                                { name: 'Next.js', icon: '/icons/nextdotjs.svg', url: 'https://nextjs.org/' },
+                                { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", url: "https://tailwindcss.com/" },
+                                {
+                                    name: "JavaScript",
+                                    icon: "/icons/javascript.svg",
+                                    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                                },
+                                { name: 'Figma', icon: '/icons/figma.svg', url: 'https://www.figma.com/' },
+                                { name: 'VS Code', icon: '/icons/VScode.png', url: 'https://code.visualstudio.com/' },
+                            ].map((skill, index) => (
+                                <a
+                                    key={index}
+                                    href={skill.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-20 aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
+                                >
+                                    <img
+                                        src={skill.icon || "/placeholder.svg"}
+                                        alt={skill.name}
+                                        width={40}
+                                        height={40}
+                                        className="w-8 h-8 brightness-0 invert"
+                                    />
+                                    <span className="text-xs text-center text-white">{skill.name}</span>
+                                </a>
+                            ))}
+                        </div>
+
+                        <div className="flex justify-center w-full space-x-6">
+                            <a
+                                href="https://github.com/RoyvHeeswijk/persoonlijikproject"
+                                className="text-white hover:text-blue-300 transition-colors"
+                                aria-label="GitHub Repository"
+                            >
+                                <Github size={36} />
+                            </a>
+                            <a
+                                href="https://persoonlijikproject-saj9.vercel.app/"
+                                className="text-white hover:text-blue-300 transition-colors"
+                                aria-label="Live Demo"
+                            >
+                                <Globe size={36} />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
