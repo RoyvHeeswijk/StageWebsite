@@ -71,39 +71,37 @@ export default function Upendo() {
             </div>
             <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
                
-                <div className="absolute inset-0 z-0 bg-black" />
-           
-                <div className="absolute inset-0 flex items-center ml-10 justify-left z-0">
-                    <div className="relative w-[400px] h-[400px] ">
-                        <Image
-                            src="/Upendo.png"
-                            alt="Upendo Logo"
-                            layout="fill"
-                            objectFit="contain"
-                        />
-                    </div>
-                </div>
+               <div className="absolute inset-0 z-0 bg-black" />
+               <div className="absolute inset-0 flex md:items-center justify-center md:justify-start md:ml-20 items-start pt-20 z-0">
+                   <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
+                       <Image
+                           src="/Upendo.png"
+                           alt="Charla Logo"
+                           layout="fill"
+                           objectFit="contain"
+                       />
+                   </div>
+               </div>
 
-                <div className="relative z-10 flex w-full h-full">
-                    <div className="flex-[3] flex items-center justify-center">
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                            UPENDO
-                        </h1>
-                    </div>
+               <div className="relative z-10 flex flex-col md:flex-row w-full h-full">
+                   <div className="flex-[3] flex items-center justify-center mt-[300px] md:mt-0">
+                       <h1 className="text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
+                           UPENDO
+                       </h1>
+                   </div>
 
-                    <div className="flex-1 flex flex-col justify-center items-start pr-4">
-                        <p className="text-white text-center text-sm md:text-base mb-8 ">
-                            Voor dit project heb ik samen met mijn groep gebruik gemaakt van onderstaande skills om een website te ontwikkelen voor het bedrijf "UPENDO".
+                   <div className="flex-1 flex flex-col justify-center items-center md:items-start px-4 md:pr-4 mt-8 md:mt-0">
+                       <p className="text-white text-center md:text-center text-sm md:text-base mb-8 max-w-[90%] md:max-w-none">
+                       Voor dit project heb ik samen met mijn groep gebruik gemaakt van onderstaande skills om een website te ontwikkelen voor het bedrijf "UPENDO".
                             <br />
                             <br />
                             Het doel van dit project om een website te designen en coderen voor de opdrachtgever in Storyblok. Zodat de opdrachtgever zijn website kon beheren en aanpassen.
                             <br />
                             <br />
                             klik op het github logo hieronder voor het resultaat. <br />
-                        </p>
-                        
+                       </p>
                        
-                        <div className="flex justify-center gap-4 w-full mb-4 mr-10">
+                       <div className="flex justify-center gap-4 w-full mb-4 mr-10">
                             {[
                                 { name: "THREE.js", icon: "/icons/threedotjs.svg", url: "https://threejs.org/" },
                                 { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", url: "https://tailwindcss.com/" },
@@ -134,19 +132,25 @@ export default function Upendo() {
                             ))}
                         </div>
 
-                        <div className="flex justify-center w-full space-x-6">
-                            <a
-                                href="https://github.com/Lucvancasteren/upendo-storyblok"
-                                className="text-white hover:text-blue-300 transition-colors"
-                                aria-label="GitHub Repository"
-                            >
-                                <Github size={36} />
-                            </a>       
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+                       <div className="flex justify-center w-full space-x-6 mb-8 md:mb-0">
+                           <a
+                               href="https://github.com/RoyvHeeswijk/persoonlijikproject"
+                               className="text-white hover:text-blue-300 transition-colors"
+                               aria-label="GitHub Repository"
+                           >
+                               <Github size={36} />
+                           </a>
+                           <a
+                               href="https://persoonlijikproject-saj9.vercel.app/"
+                               className="text-white hover:text-blue-300 transition-colors"
+                               aria-label="Live Demo"
+                           >
+                               <Globe size={36} />
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           </section>
             <section id="otherprojects" className="bg-black py-24">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4 text-white">OTHER PROJECTS</h2>

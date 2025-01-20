@@ -72,9 +72,8 @@ export default function Charla() {
             <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
                
                 <div className="absolute inset-0 z-0 bg-black" />
-           
-                <div className="absolute inset-0 flex items-center ml-10 justify-left z-0">
-                    <div className="relative w-[400px] h-[400px] ">
+                <div className="absolute inset-0 flex md:items-center justify-center md:justify-start md:ml-20 items-start pt-20 z-0">
+                    <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
                         <Image
                             src="/Charla.png"
                             alt="Charla Logo"
@@ -84,15 +83,15 @@ export default function Charla() {
                     </div>
                 </div>
 
-                <div className="relative z-10 flex w-full h-full">
-                    <div className="flex-[3] flex items-center justify-center">
-                        <h1 className="text-8xl font-black text-white font-['American_Captain'] font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="relative z-10 flex flex-col md:flex-row w-full h-full">
+                    <div className="flex-[3] flex items-center justify-center mt-[300px] md:mt-0">
+                        <h1 className="text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
                             CHARLA
                         </h1>
                     </div>
 
-                    <div className="flex-1 flex flex-col justify-center items-start pr-4">
-                        <p className="text-white text-center text-base mb-8">
+                    <div className="flex-1 flex flex-col justify-center items-center md:items-start px-4 md:pr-4 mt-8 md:mt-0">
+                        <p className="text-white text-center md:text-center text-sm md:text-base mb-8 max-w-[90%] md:max-w-none">
                             Voor dit project heb ik gebruik gemaakt van onderstaande skills om een Speech-to-text app te maken.
                             <br />
                             <br />
@@ -102,7 +101,7 @@ export default function Charla() {
                             klik op het github logo of het globe logo hieronder voor het resultaat. <br />
                         </p>
                         
-                        <div className="flex justify-center gap-4 w-full mb-4 mr-10">
+                        <div className="flex flex-wrap justify-center gap-4 w-full mb-4 md:mr-10">
                             {[
                                 { name: 'Next.js', icon: '/icons/nextdotjs.svg', url: 'https://nextjs.org/' },
                                 { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", url: "https://tailwindcss.com/" },
@@ -119,21 +118,21 @@ export default function Charla() {
                                     href={skill.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-20 aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
+                                    className="w-16 md:w-20 aspect-square bg-zinc-800 flex flex-col items-center justify-center gap-2 transition-all hover:bg-[#0979EB] hover:scale-105"
                                 >
                                     <img
                                         src={skill.icon || "/placeholder.svg"}
                                         alt={skill.name}
                                         width={40}
                                         height={40}
-                                        className="w-8 h-8 brightness-0 invert"
+                                        className="w-6 h-6 md:w-8 md:h-8 brightness-0 invert"
                                     />
-                                    <span className="text-xs text-center text-white">{skill.name}</span>
+                                    <span className="text-[10px] md:text-xs text-center text-white">{skill.name}</span>
                                 </a>
                             ))}
                         </div>
 
-                        <div className="flex justify-center w-full space-x-6">
+                        <div className="flex justify-center w-full space-x-6 mb-8 md:mb-0">
                             <a
                                 href="https://github.com/RoyvHeeswijk/persoonlijikproject"
                                 className="text-white hover:text-blue-300 transition-colors"
