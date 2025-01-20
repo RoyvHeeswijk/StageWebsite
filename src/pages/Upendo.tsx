@@ -70,7 +70,19 @@ export default function Upendo() {
                 <Navbar />
             </div>
             <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-              
+               
+                <div className="absolute inset-0 z-0 bg-black" />
+           
+                <div className="absolute inset-0 flex items-center ml-10 justify-left z-0">
+                    <div className="relative w-[400px] h-[400px] ">
+                        <Image
+                            src="/Upendo.png"
+                            alt="Upendo Logo"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </div>
+                </div>
 
                 <div className="relative z-10 flex w-full h-full">
                     <div className="flex-[3] flex items-center justify-center">
@@ -88,7 +100,6 @@ export default function Upendo() {
                             <br />
                             <br />
                             klik op het github logo hieronder voor het resultaat. <br />
-
                         </p>
                         
                        

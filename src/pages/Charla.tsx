@@ -70,17 +70,29 @@ export default function Charla() {
                 <Navbar />
             </div>
             <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-              
+               
+                <div className="absolute inset-0 z-0 bg-black" />
+           
+                <div className="absolute inset-0 flex items-center ml-10 justify-left z-0">
+                    <div className="relative w-[400px] h-[400px] ">
+                        <Image
+                            src="/Charla.png"
+                            alt="Charla Logo"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </div>
+                </div>
 
                 <div className="relative z-10 flex w-full h-full">
                     <div className="flex-[3] flex items-center justify-center">
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <h1 className="text-8xl font-black text-white font-['American_Captain'] font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                             CHARLA
                         </h1>
                     </div>
 
                     <div className="flex-1 flex flex-col justify-center items-start pr-4">
-                        <p className="text-white text-center text-sm md:text-base mb-8">
+                        <p className="text-white text-center text-base mb-8">
                             Voor dit project heb ik gebruik gemaakt van onderstaande skills om een Speech-to-text app te maken.
                             <br />
                             <br />
@@ -88,13 +100,9 @@ export default function Charla() {
                             <br />
                             <br />
                             klik op het github logo of het globe logo hieronder voor het resultaat. <br />
-
                         </p>
-                       
-                       
-                      
-                       
-                        <div className="flex justify-center gap-4 w-full mb-4">
+                        
+                        <div className="flex justify-center gap-4 w-full mb-4 mr-10">
                             {[
                                 { name: 'Next.js', icon: '/icons/nextdotjs.svg', url: 'https://nextjs.org/' },
                                 { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", url: "https://tailwindcss.com/" },
@@ -143,7 +151,6 @@ export default function Charla() {
                         </div>
                     </div>
                 </div>
-                
             </section>
 
             <section id="otherprojects" className="bg-black py-24">
