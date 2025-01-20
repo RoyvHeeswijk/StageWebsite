@@ -162,7 +162,7 @@ export default function Home() {
         <div className="flex-1 mx-4 sm:mx-[10%] md:mx-[15%] flex items-center justify-center -translate-y-[10%]">
           <div className="w-full h-full max-w-[1000px]">
             <div className="grid grid-cols-2 gap-4 sm:gap-8 place-items-center">
-              {[1, 2, 3, 4].map((i) => (
+              {[1, 2, 3].map((i) => (
                 <div
                   key={i}
                   className={`group w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start relative ${i === 1 || i === 2 || i === 3 ? 'cursor-pointer' : ''}`}

@@ -152,7 +152,7 @@ export default function Charla() {
                 </div>
 
                 <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((i) => (
+                    {[1, 2].map((i) => (
                         <div
                             key={i}
                             className="bg-zinc-800 rounded-lg overflow-hidden cursor-pointer hover:bg-zinc-700 transition-colors border border-white/40"

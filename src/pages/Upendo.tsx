@@ -80,17 +80,19 @@ export default function Upendo() {
                     </div>
 
                     <div className="flex-1 flex flex-col justify-center items-start pr-4">
-                        <p className="text-white text-center text-sm md:text-base mb-8">
-                            Voor dit project heb ik gebruik gemaakt van onderstaande skills om een sphere te kunnen laten draaien.
+                        <p className="text-white text-center text-sm md:text-base mb-8 ">
+                            Voor dit project heb ik samen met mijn groep gebruik gemaakt van onderstaande skills om een website te ontwikkelen voor het bedrijf "UPENDO".
                             <br />
                             <br />
-                            Het doel van dit project was om te leren om meer te weten te komen over THREE.js en hoe ik het kan gebruiken in mijn projecten.
+                            Het doel van dit project om een website te designen en coderen voor de opdrachtgever in Storyblok. Zodat de opdrachtgever zijn website kon beheren en aanpassen.
                             <br />
                             <br />
-                            klik op het github logo of het globe logo hieronder voor het resultaat. <br />
+                            klik op het github logo hieronder voor het resultaat. <br />
 
                         </p>
-                        <div className="flex justify-center gap-4 w-full mb-4">
+                        
+                       
+                        <div className="flex justify-center gap-4 w-full mb-4 mr-10">
                             {[
                                 { name: "THREE.js", icon: "/icons/threedotjs.svg", url: "https://threejs.org/" },
                                 { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", url: "https://tailwindcss.com/" },
@@ -99,6 +101,8 @@ export default function Upendo() {
                                     icon: "/icons/javascript.svg",
                                     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
                                 },
+                                { name: 'VS Code', icon: '/icons/VScode.png', url: 'https://code.visualstudio.com/' },
+                                { name: 'Figma', icon: '/icons/figma.svg', url: 'https://www.figma.com/' },
                             ].map((skill, index) => (
                                 <a
                                     key={index}
@@ -121,19 +125,12 @@ export default function Upendo() {
 
                         <div className="flex justify-center w-full space-x-6">
                             <a
-                                href="https://github.com/RoyvHeeswijk/Sphere"
+                                href="https://github.com/Lucvancasteren/upendo-storyblok"
                                 className="text-white hover:text-blue-300 transition-colors"
                                 aria-label="GitHub Repository"
                             >
                                 <Github size={36} />
-                            </a>
-                            <a
-                                href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3/index.html"
-                                className="text-white hover:text-blue-300 transition-colors"
-                                aria-label="Live Demo"
-                            >
-                                <Globe size={36} />
-                            </a>
+                            </a>       
                         </div>
                     </div>
                 </div>
@@ -146,7 +143,7 @@ export default function Upendo() {
                 </div>
 
                 <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((i) => (
+                    {[1, 2].map((i) => (
                         <div
                             key={i}
                             className="bg-zinc-800 rounded-lg overflow-hidden cursor-pointer hover:bg-zinc-700 transition-colors border border-white/40"
