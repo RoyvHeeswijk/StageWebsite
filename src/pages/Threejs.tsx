@@ -82,7 +82,7 @@ export default function ThreeJS() {
                     </div>
 
                     <div className="flex-1 flex flex-col justify-center items-start pr-4">
-                        <p className="text-white text-center text-xs sm:text-sm md:text-base mb-8">
+                        <p className="text-white text-center text-sm md:text-base mb-8">
                             Voor dit project heb ik gebruik gemaakt van onderstaande skills om een sphere te kunnen laten draaien. 
                             <br />
                             <br />
