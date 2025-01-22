@@ -143,7 +143,7 @@ export default function Charla() {
                                 <Github size={36} />
                             </a>
                             <a
-                                href="https://persoonlijikproject-saj9.vercel.app/"
+                                href="https://persoonlijkproject-saj9.vercel.app/"
                                 className="text-white hover:text-blue-300 transition-colors"
                                 aria-label="Live Demo"
                             >

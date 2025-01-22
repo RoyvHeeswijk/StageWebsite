@@ -4,7 +4,7 @@ import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
-const classicFont = "font-American-Captain";
+const classicFont = "American-Captain";
 
 interface NavItemProps {
   text: string
@@ -158,7 +158,7 @@ export default function Home() {
         </h2>
         <div className="flex-1 mx-4 md:mx-[10%] lg:mx-[15%] flex items-center justify-center -translate-y-[10%]">
           <div className="w-full h-full max-w-[1000px]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 place-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap- md:gap-8 place-items-center">
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
