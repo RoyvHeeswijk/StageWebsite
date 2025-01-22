@@ -191,7 +191,7 @@ export default function ThreeJS() {
                         >
                             <div className="h-48 w-full relative">
                                 {i === 1 ? (
-                                    <div className="h-full w-full flex items-center justify-center">
+                                    <div className="h-full w-full flex items-center justify-center bg-black">
                                         <Image
                                             src="/Charla.png"
                                             alt="Project"
