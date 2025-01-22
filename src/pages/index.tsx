@@ -292,6 +292,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto px-4">
             {[
               { name: "HTML", icon: "/icons/html5.svg", url: "https://html.spec.whatwg.org/" },
+              { name: "Openai", icon: "/icons/openai.svg", url: "https://openai.com/" },
               { name: "Tailwind CSS", icon: "/icons/tailwindcss.svg", url: "https://tailwindcss.com/" },
               { name: "CSS", icon: "/icons/css.svg", url: "https://www.w3.org/Style/CSS/" },
               { name: "Figma", icon: "/icons/figma.svg", url: "https://www.figma.com/" },

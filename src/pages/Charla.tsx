@@ -114,6 +114,7 @@ export default function Charla() {
                                 },
                                 { name: 'Figma', icon: '/icons/figma.svg', url: 'https://www.figma.com/' },
                                 { name: 'VS Code', icon: '/icons/VScode.png', url: 'https://code.visualstudio.com/' },
+                                { name: "Openai", icon: "/icons/openai.svg", url: "https://openai.com/" },
                             ].map((skill, index) => (
                                 <a
                                     key={index}
