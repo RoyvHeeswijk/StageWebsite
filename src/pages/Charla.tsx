@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-const classicFont = "font-serif";
+const classicFont = "font-American-Captain";
 interface NavItemProps {
     text: string
     href: string
@@ -31,7 +31,7 @@ function NavItem({ text, href }: NavItemProps) {
                 }
             }}
         >
-            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
+            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont} font-bold`}>{text}</span>
         </div>
     )
 }
@@ -94,13 +94,13 @@ export default function Charla() {
 
                     <div className="flex-1 flex flex-col justify-center items-center md:items-start px-4 md:pr-4 mt-8 md:mt-0">
                         <p className="text-white text-center md:text-center text-sm md:text-base mb-8 max-w-[90%] md:max-w-none">
-                            Voor dit project heb ik gebruik gemaakt van onderstaande skills om een Speech-to-text app te maken.
+                            For this project, I used the skills below to create a Speech-to-text app.
                             <br />
                             <br />
-                            Het doel van dit project was om door gebruik te maken van OPENAI API key een Speech-to-text app te maken waarbij je berichten kunt versturen wat eerst jou spraak was.
+                            The goal of this project was to create a Speech-to-text app using the OPENAI API key, allowing you to send messages that were originally your speech.
                             <br />
                             <br />
-                            klik op het github logo of het globe logo hieronder voor het resultaat. <br />
+                            Click on the GitHub logo or the globe logo below for the result. <br />
                         </p>
                         
                         <div className="flex flex-wrap justify-center gap-4 w-full mb-4 md:mr-10">
@@ -154,7 +154,7 @@ export default function Charla() {
                 </div>
             </section>
 
-            <section id="otherprojects" className="bg-[030303] py-24">
+            <section id="otherprojects" className="bg-[#1E1E1E] py-24">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold mb-4 text-white">OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />

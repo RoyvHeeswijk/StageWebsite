@@ -4,7 +4,7 @@ import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
-const classicFont = "font-serif";
+const classicFont = "font-American-Captain";
 
 interface NavItemProps {
   text: string
@@ -40,7 +40,7 @@ function NavItem({ text, href }: NavItemProps) {
         }
       }}
     >
-      <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
+      <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont} font-bold`}>{text}</span>
     </div>
   )
 }
@@ -110,7 +110,7 @@ export default function Home() {
         <Navbar />
       </div>
       <section id="home" className="relative h-screen">
-        <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl md:text-6xl lg:text-8xl whitespace-nowrap font-black text-white ${classicFont}`}>
+        <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl md:text-6xl lg:text-8xl whitespace-nowrap font-black text-white ${classicFont} font-bold`}>
           ROY v HEESWIJK
         </h1>
         <div className="h-full grid grid-cols-1 md:grid-cols-2">
@@ -206,11 +206,11 @@ export default function Home() {
                     </h3>
                     <p className="text-[0.65rem] md:text-xs lg:text-sm text-white/60 mt-2 line-clamp-5">
                       {i === 1
-                        ? "Dit is een project waarmee ik gebruik maak van THREE.js om een Sphere rond te laten draaien."
+                        ? "This is a project where I use THREE.js to make a sphere rotate."
                         : i === 2
-                          ? "Dit is een project waarmee ik gebruik maak van Next.js om een Speech-to-text app te maken."
+                          ? "This is a project where I use Next.js to create a speech-to-text app."
                           : i === 3
-                            ? "Dit is een project waarmee ik gebruik maak van Tailwind CSS & Javascript om een website te maken voor het bedrijf Upendo."
+                            ? "This is a project where I use Tailwind CSS & JavaScript to create a website for the company Upendo."
                             : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."}
                     </p>
                   </div>
@@ -275,16 +275,13 @@ export default function Home() {
             ABOUT ME
           </h1>
           <p className="text-center text-[13px] md:text-lg lg:text-[19px] max-w-3xl mx-auto leading-relaxed">
-            Ik ben Roy van Heeswijk, 19 jaar oud en woon in Drunen, waar ik geboren en opgegroeid ben. Ik studeer ICT &
-            Media Design aan Fontys in Tilburg.
+            I am Roy van Heeswijk, 19 years old and live in Drunen, where I was born and raised. I study ICT & Media Design at Fontys in Tilburg.
             <br />
             <br />
-            Met een passie voor technologie en creativiteit werk ik graag aan projecten waarin ik mezelf kan uitdagen en
-            nieuwe dingen kan leren. Op mijn portfolio vind je een overzicht van mijn werk en de stappen die ik maak in
-            mijn ontwikkeling.
+            With a passion for technology and creativity, I enjoy working on projects where I can challenge myself and learn new things. On my portfolio, you will find an overview of my work and the steps I take in my development.
             <br />
             <br />
-            Hieronder zie je ook waar ik zelf in gevorderd ben. Neem gerust een kijkje!
+            Below you can my skills and above you can see what I have progressed in. Feel free to take a look!
           </p>
         </div>
 

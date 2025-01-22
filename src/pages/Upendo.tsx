@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-const classicFont = "font-serif";
+const classicFont = "font-American-Captain";
 interface NavItemProps {
     text: string
     href: string
@@ -31,7 +31,7 @@ function NavItem({ text, href }: NavItemProps) {
                 }
             }}
         >
-            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
+            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont} font-bold`}>{text}</span>
         </div>
     )
 }
@@ -78,7 +78,7 @@ export default function Upendo() {
                    <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
                        <Image
                            src="/Upendo.png"
-                           alt="Charla Logo"
+                           alt="Upendo Logo"
                            layout="fill"
                            objectFit="contain"
                        />
@@ -94,13 +94,13 @@ export default function Upendo() {
 
                    <div className="flex-1 flex flex-col justify-center items-center md:items-start px-4 md:pr-4 mt-8 md:mt-0">
                        <p className={`text-white text-center md:text-center text-sm md:text-base mb-8 max-w-[90%] md:max-w-none ${classicFont}`}>
-                       Voor dit project heb ik samen met mijn groep gebruik gemaakt van onderstaande skills om een website te ontwikkelen voor het bedrijf "UPENDO".
+                       For this project, I worked with my group using the skills below to develop a website for the company "UPENDO".
                             <br />
                             <br />
-                            Het doel van dit project om een website te designen en coderen voor de opdrachtgever in Storyblok. Zodat de opdrachtgever zijn website kon beheren en aanpassen.
+                            The goal of this project was to design and code a website for the client in Storyblok. So that the client could manage and change their website.
                             <br />
                             <br />
-                            klik op het github logo hieronder voor het resultaat. <br />
+                            Click on the GitHub logo below for the result. <br />
                        </p>
                        
                        <div className="flex justify-center gap-4 w-full mb-4 mr-10">
@@ -136,24 +136,17 @@ export default function Upendo() {
 
                        <div className="flex justify-center w-full space-x-6 mb-8 md:mb-0">
                            <a
-                               href="https://github.com/RoyvHeeswijk/persoonlijikproject"
+                                href="https://github.com/Lucvancasteren/upendo-storyblok"
                                className="text-white hover:text-blue-300 transition-colors"
                                aria-label="GitHub Repository"
                            >
                                <Github size={36} />
                            </a>
-                           <a
-                               href="https://persoonlijikproject-saj9.vercel.app/"
-                               className="text-white hover:text-blue-300 transition-colors"
-                               aria-label="Live Demo"
-                           >
-                               <Globe size={36} />
-                           </a>
                        </div>
                    </div>
                </div>
            </section>
-            <section id="otherprojects" className="bg-[030303] py-24">
+            <section id="otherprojects" className="bg-[#1E1E1E] py-24">
                 <div className="text-center mb-12">
                     <h2 className={`text-4xl font-bold mb-4 text-white ${classicFont}`}>OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />

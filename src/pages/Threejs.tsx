@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-const classicFont = "American_Captain";
+const classicFont = "font-American-Captain";
 interface NavItemProps {
     text: string
     href: string
@@ -31,7 +31,7 @@ function NavItem({ text, href }: NavItemProps) {
                 }
             }}
         >
-            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
+            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont} font-bold`}>{text}</span>
         </div>
     )
 }
@@ -85,13 +85,13 @@ export default function ThreeJS() {
 
                     <div className="flex-1 flex flex-col justify-center items-start pr-4">
                         <p className="text-white text-center text-sm md:text-base mb-8">
-                            Voor dit project heb ik gebruik gemaakt van onderstaande skills om een sphere te kunnen laten draaien. 
+                            For this project, I used the skills below to make a sphere spin. 
                             <br />
                             <br />
-                            Het doel van dit project was om te leren om meer te weten te komen over THREE.js en hoe ik het kan gebruiken in mijn projecten. 
+                            The goal of this project was to learn more about THREE.js and how I can use it in my projects. 
                             <br />
                             <br />
-                            klik op het github logo of het globe logo hieronder voor het resultaat. <br />
+                            Click on the GitHub logo or the globe logo below for the result. <br />
                            
                         </p>
                         <div className="flex justify-center gap-4 w-full mb-4">
@@ -144,7 +144,7 @@ export default function ThreeJS() {
                
             </section>
 
-            <section id="otherprojects" className="bg-[030303] py-24">
+            <section id="otherprojects" className="bg-[#1E1E1E] py-24">
                 <div className="text-center mb-12">
                     <h2 className={`text-4xl font-bold mb-4 text-white ${classicFont}`}>OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />
