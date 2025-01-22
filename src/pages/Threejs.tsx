@@ -83,15 +83,15 @@ export default function ThreeJS() {
                         </h1>
                     </div>
 
-                    <div className="flex-1 flex flex-col justify-center items-start pr-4">
+                    <div className="flex-1 flex flex-col justify-center items-center pr-4">
                         <p className="text-white text-center text-sm md:text-base mb-8">
-                            For this project, I used the skills below to make a sphere spin. 
+                            For this project, I used the skills below to make a sphere spin and i created a diece that you can spin. 
                             <br />
                             <br />
-                            The goal of this project was to learn more about THREE.js and how I can use it in my projects. 
+                            The goal of these project was to learn more about THREE.js and how I can use it in my projects. 
                             <br />
                             <br />
-                            Click on the GitHub logo or the globe logo below for the result. <br />
+                            Click on the GitHub logo or the globe logo below for the result.  <br />
                            
                         </p>
                         <div className="flex justify-center gap-4 w-full mb-4">
@@ -122,26 +122,52 @@ export default function ThreeJS() {
                                 </a>
                             ))}
                         </div>
-                      
-                        <div className="flex justify-center w-full space-x-6">
-                            <a
-                                href="https://github.com/RoyvHeeswijk/Sphere"
-                                className="text-white hover:text-blue-300 transition-colors"
-                                aria-label="GitHub Repository"
-                            >
-                                <Github size={36} />
-                            </a>
-                            <a
-                                href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3/index.html"
-                                className="text-white hover:text-blue-300 transition-colors"
-                                aria-label="Live Demo"
-                            >
-                                <Globe size={36} />
-                            </a>
+                        <div className="flex justify-center items-center mb-8">
+                            <div className="flex flex-col items-center mr-8">
+                                <h1 className="text-white text-center text-sm md:text-base mb-2 font-bold">
+                                    Sphere
+                                </h1>
+                                <div className="flex justify-center w-full space-x-6">
+                                    <a
+                                        href="https://github.com/RoyvHeeswijk/Sphere"
+                                        className="text-white hover:text-blue-300 transition-colors"
+                                        aria-label="GitHub Repository"
+                                    >
+                                        <Github size={36} />
+                                    </a>
+                                    <a
+                                        href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3/index.html"
+                                        className="text-white hover:text-blue-300 transition-colors"
+                                        aria-label="Live Demo"
+                                    >
+                                        <Globe size={36} />
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="flex flex-col items-center">
+                                <h1 className="text-white text-center text-sm md:text-base mb-2 font-bold">
+                                    Diece
+                                </h1>
+                                <div className="flex justify-center w-full space-x-6">
+                                    <a
+                                        href="https://github.com/RoyvHeeswijk/Diece"
+                                        className="text-white hover:text-blue-300 transition-colors"
+                                        aria-label="GitHub Repository"
+                                    >
+                                        <Github size={36} />
+                                    </a>
+                                    <a
+                                        href="https://i539880.hera.fontysict.net/portfolio/livewall2/persoonlijk3.2/index.html"
+                                        className="text-white hover:text-blue-300 transition-colors"
+                                        aria-label="Live Demo"
+                                    >
+                                        <Globe size={36} />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-               
             </section>
 
             <section id="otherprojects" className="bg-[#1E1E1E] py-24">

@@ -197,16 +197,16 @@ export default function Home() {
                   <div className="ml-[5%] w-[50%] flex flex-col relative z-10">
                     <h3 className={`text-sm md:text-lg lg:text-xl ${classicFont} text-white`}>
                       {i === 1
-                        ? "Sphere using Three.js"
+                        ? "Sphere & Diece"
                         : i === 2
                           ? "Charla"
                           : i === 3
                             ? "Upendo"
-                            : "Sphere using Three.js"}
+                            : "Sphere & Diece"}
                     </h3>
                     <p className="text-[0.65rem] md:text-xs lg:text-sm text-white/60 mt-2 line-clamp-5">
                       {i === 1
-                        ? "This is a project where I use THREE.js to make a sphere rotate."
+                        ? "This is a project where I use THREE.js to make a sphere & diece rotate."
                         : i === 2
                           ? "This is a project where I use Next.js to create a speech-to-text app."
                           : i === 3

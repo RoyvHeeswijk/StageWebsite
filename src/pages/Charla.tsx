@@ -192,7 +192,7 @@ export default function Charla() {
                             </div>
                             <div className="p-4">
                                 <h3 className="text-sm font-mono text-white">
-                                    {i === 1 ? "Sphere using Three.js" : i === 2 ? "Upendo" : "Charla"}
+                                    {i === 1 ? "Sphere & Diece" : i === 2 ? "Upendo" : "Charla"}
                                 </h3>
                             </div>
                         </div>
