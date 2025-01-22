@@ -235,7 +235,7 @@ export default function Home() {
         </div>
 
         <div
-          className="absolute top-[90%] mt-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+          className="absolute top-[88%] mt-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
           onClick={() => {
             const element = document.querySelector("#about")
             if (element instanceof HTMLElement) {
@@ -254,7 +254,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="relative min-h-screen bg-[#1E1E1E] text-white p-4 md:p-6 lg:p-8 flex flex-col justify-start pt-[10vh] pb-[10vh]"
+        className="relative min-h-screen bg-[#1E1E1E] text-white p-4 md:p-6 lg:p-8 flex flex-col justify-start pt-[10vh] pb-0"
       >
         <div className="absolute inset-0 bg-[#1E1E1E]">
           <div className="absolute w-full h-full overflow-hidden">
