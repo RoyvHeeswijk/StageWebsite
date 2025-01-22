@@ -4,6 +4,8 @@ import { AlignJustify, ChevronDown, Github, Globe } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+
+const classicFont = "font-serif";
 interface NavItemProps {
     text: string
     href: string
@@ -29,7 +31,7 @@ function NavItem({ text, href }: NavItemProps) {
                 }
             }}
         >
-            <span className="text-2xl sm:text-3xl md:text-4xl font-['American_Captain'] font-regular">{text}</span>
+            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
         </div>
     )
 }
@@ -85,13 +87,13 @@ export default function Upendo() {
 
                <div className="relative z-10 flex flex-col md:flex-row w-full h-full">
                    <div className="flex-[3] flex items-center justify-center mt-[300px] md:mt-0">
-                       <h1 className="text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
+                       <h1 className={`text-6xl md:text-8xl font-black text-white ${classicFont} font-bold md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2`}>
                            UPENDO
                        </h1>
                    </div>
 
                    <div className="flex-1 flex flex-col justify-center items-center md:items-start px-4 md:pr-4 mt-8 md:mt-0">
-                       <p className="text-white text-center md:text-center text-sm md:text-base mb-8 max-w-[90%] md:max-w-none">
+                       <p className={`text-white text-center md:text-center text-sm md:text-base mb-8 max-w-[90%] md:max-w-none ${classicFont}`}>
                        Voor dit project heb ik samen met mijn groep gebruik gemaakt van onderstaande skills om een website te ontwikkelen voor het bedrijf "UPENDO".
                             <br />
                             <br />
@@ -153,7 +155,7 @@ export default function Upendo() {
            </section>
             <section id="otherprojects" className="bg-[030303] py-24">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold mb-4 text-white">OTHER PROJECTS</h2>
+                    <h2 className={`text-4xl font-bold mb-4 text-white ${classicFont}`}>OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />
                 </div>
 

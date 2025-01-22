@@ -4,6 +4,8 @@ import { ChevronDown, Github, Globe } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+
+const classicFont = "American_Captain";
 interface NavItemProps {
     text: string
     href: string
@@ -29,7 +31,7 @@ function NavItem({ text, href }: NavItemProps) {
                 }
             }}
         >
-            <span className="text-2xl sm:text-3xl md:text-4xl font-['American_Captain'] font-regular">{text}</span>
+            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
         </div>
     )
 }
@@ -76,7 +78,7 @@ export default function ThreeJS() {
 
                 <div className="relative z-10 flex w-full h-full">
                     <div className="flex-[3] flex items-center justify-center">
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <h1 className={`text-4xl sm:text-6xl md:text-8xl font-black text-white ${classicFont} font-bold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2`}>
                             THREE.JS
                         </h1>
                     </div>
@@ -144,7 +146,7 @@ export default function ThreeJS() {
 
             <section id="otherprojects" className="bg-[030303] py-24">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold mb-4 text-white">OTHER PROJECTS</h2>
+                    <h2 className={`text-4xl font-bold mb-4 text-white ${classicFont}`}>OTHER PROJECTS</h2>
                     <ChevronDown className="mx-auto text-white" size={24} />
                 </div>
 

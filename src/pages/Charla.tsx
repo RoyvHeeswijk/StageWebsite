@@ -4,6 +4,8 @@ import { ChevronDown, Globe, Github } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+
+const classicFont = "font-serif";
 interface NavItemProps {
     text: string
     href: string
@@ -29,7 +31,7 @@ function NavItem({ text, href }: NavItemProps) {
                 }
             }}
         >
-            <span className="text-2xl sm:text-3xl md:text-4xl font-['American_Captain'] font-regular">{text}</span>
+            <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
         </div>
     )
 }
@@ -85,7 +87,7 @@ export default function Charla() {
 
                 <div className="relative z-10 flex flex-col md:flex-row w-full h-full">
                     <div className="flex-[3] flex items-center justify-center mt-[300px] md:mt-0">
-                        <h1 className="text-6xl md:text-8xl font-black text-white font-['American_Captain'] font-bold md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
+                        <h1 className={`text-6xl md:text-8xl font-black text-white ${classicFont} font-bold md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2`}>
                             CHARLA
                         </h1>
                     </div>

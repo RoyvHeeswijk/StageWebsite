@@ -2,7 +2,9 @@
 
 import Image from "next/image"
 import { ChevronDown } from "lucide-react"
-import { useRef, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+
+const classicFont = "font-serif";
 
 interface NavItemProps {
   text: string
@@ -23,7 +25,7 @@ function throttle(func: (...args: any[]) => void, limit: number) {
 function NavItem({ text, href }: NavItemProps) {
   return (
     <div
-      className="cursor-pointer hover:text-gray-600 transition-colors px-4 sm:px-8"
+      className="cursor-pointer hover:text-gray-600 transition-colors px-4 md:px-8"
       onClick={(e) => {
         e.preventDefault()
         const element = document.querySelector(href)
@@ -38,7 +40,7 @@ function NavItem({ text, href }: NavItemProps) {
         }
       }}
     >
-      <span className="text-2xl sm:text-3xl md:text-4xl font-['American_Captain'] font-regular">{text}</span>
+      <span className={`text-sm md:text-3xl lg:text-4xl ${classicFont}`}>{text}</span>
     </div>
   )
 }
@@ -57,14 +59,14 @@ function Navbar() {
 
   return (
     <nav className={`sticky top-0 transition-colors duration-300 ${isScrolled ? "bg-[#1E1E1E]" : "bg-transparent"}`}>
-      <div className="px-4 sm:px-8 md:px-12 transition-all duration-300 w-full">
+      <div className="px-4 md:px-8 lg:px-12 transition-all duration-300 w-full">
         <div className="flex items-center justify-between h-[100px]">
-          <div className="pl-4 sm:pl-12 md:pl-24">
-            <div className="text-[0.8rem] sm:text-base md:text-2xl lg:text-3xl whitespace-nowrap">
+          <div className="pl-4 md:pl-12 lg:pl-24">
+            <div className="text-[0.8rem] md:text-base lg:text-2xl whitespace-nowrap">
               <NavItem text="ROY v HEESWIJK" href="#home" />
             </div>
           </div>
-          <div className="flex whitespace-nowrap gap-4 sm:gap-8 md:gap-16 pr-4 sm:pr-12 md:pr-24 text-[1rem] sm:text-base md:text-2xl lg:text-3xl">
+          <div className="flex whitespace-nowrap gap-1 md:gap-8 lg:gap-16 pr-4 md:pr-12 lg:pr-24 text-[1rem] md:text-base lg:text-2xl">
             <NavItem text="PROJECTS" href="#projects" />
             <NavItem text="ABOUT ME" href="#about" />
           </div>
@@ -79,7 +81,7 @@ export default function Home() {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section")
       const navbarHeight = 100
-      const scrollPosition = window.scrollY + navbarHeight + 50 // Add some offset
+      const scrollPosition = window.scrollY + navbarHeight + 50
 
       let currentSectionId = ""
 
@@ -108,10 +110,10 @@ export default function Home() {
         <Navbar />
       </div>
       <section id="home" className="relative h-screen">
-        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl sm:text-6xl md:text-8xl whitespace-nowrap font-black text-white font-['American_Captain'] font-bold">
+        <h1 className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-4xl md:text-6xl lg:text-8xl whitespace-nowrap font-black text-white ${classicFont}`}>
           ROY v HEESWIJK
         </h1>
-        <div className="h-full grid grid-cols-2">
+        <div className="h-full grid grid-cols-1 md:grid-cols-2">
           <div className="bg-[#1E1E1E] flex items-center justify-center"></div>
           <div className="relative">
             <Image src="/mijzelf.png" alt="Roy v Heeswijk" fill className="object-cover" />
@@ -123,7 +125,7 @@ export default function Home() {
           onClick={() => {
             const element = document.querySelector("#projects")
             if (element instanceof HTMLElement) {
-              const navbarHeight = 100 // Height of navbar
+              const navbarHeight = 100
               window.scrollTo({
                 top: element.offsetTop - navbarHeight,
                 behavior: "smooth",
@@ -131,40 +133,36 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-4xl font-['American_Captain'] font-bold mb-2 text-white">PROJECTS</span>
+          <span className={`text-4xl ${classicFont} font-bold mb-2 text-white`}>PROJECTS</span>
           <ChevronDown className="w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
           <ChevronDown className="absolute bottom-2 w-6 h-6 transition-transform group-hover:translate-y-1 text-white" />
         </div>
       </section>
       <section id="projects" className="relative min-h-[90vh] flex flex-col bg-white">
-        {/* Animated background elements */}
         <div className="absolute inset-0">
-          {/* Geometric shapes */}
           <div className="absolute w-full h-full overflow-hidden">
-            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4 hidden md:block"></div>
-            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[2px] bg-blue-500/20 -rotate-45  hidden md:block"></div>
-            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[2px] bg-blue-400/20 rotate-45  hidden md:block"></div>
+            <div className="absolute top-0 left-0 w-[400px] md:w-[600px] lg:w-[800px] h-[2px] bg-blue-600/20 rotate-45 transform -translate-x-1/4 hidden md:block"></div>
+            <div className="absolute top-1/4 right-0 w-[300px] md:w-[450px] lg:w-[600px] h-[2px] bg-blue-500/20 -rotate-45 hidden md:block"></div>
+            <div className="absolute bottom-1/3 left-0 w-[200px] md:w-[300px] lg:w-[400px] h-[2px] bg-blue-400/20 rotate-45 hidden md:block"></div>
 
-            {/* Circles */}
-            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-2 border-blue-500/20 rounded-full hidden md:block"></div>
-            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-2 border-blue-400/20 rounded-full hidden md:block"></div>
+            <div className="absolute top-[20%] left-[10%] w-[50px] md:w-[75px] lg:w-[100px] h-[50px] md:h-[75px] lg:h-[100px] border-2 border-blue-500/20 rounded-full hidden md:block"></div>
+            <div className="absolute top-[60%] right-[15%] w-[75px] md:w-[100px] lg:w-[150px] h-[75px] md:h-[100px] lg:h-[150px] border-2 border-blue-400/20 rounded-full hidden md:block"></div>
 
-            {/* Rectangles */}
-            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-2 border-blue-600/20 rotate-45 hidden md:block"></div>
-            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-2 border-blue-500/20 rotate-12 hidden md:block"></div>
+            <div className="absolute top-[40%] left-[80%] w-[40px] md:w-[60px] lg:w-[80px] h-[40px] md:h-[60px] lg:h-[80px] border-2 border-blue-600/20 rotate-45 hidden md:block"></div>
+            <div className="absolute top-[70%] left-[20%] w-[30px] md:w-[45px] lg:w-[60px] h-[30px] md:h-[45px] lg:h-[60px] border-2 border-blue-500/20 rotate-12 hidden md:block"></div>
           </div>
         </div>
 
-        <h2 className="text-[3.6rem] sm:text-[4.5rem] md:text-[4.0rem] font-['American_Captain'] font-bold text-black text-center mt-8 mb-12">
+        <h2 className={`text-[3.6rem] md:text-[4.5rem] lg:text-[4.0rem] ${classicFont} font-bold text-black text-center mt-8 mb-12`}>
           PROJECTS
         </h2>
-        <div className="flex-1 mx-4 sm:mx-[10%] md:mx-[15%] flex items-center justify-center -translate-y-[10%]">
+        <div className="flex-1 mx-4 md:mx-[10%] lg:mx-[15%] flex items-center justify-center -translate-y-[10%]">
           <div className="w-full h-full max-w-[1000px]">
-            <div className="grid grid-cols-2 gap-4 sm:gap-8 place-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 place-items-center">
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className={`group w-[40vw] sm:w-[25vw] h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start relative ${i === 1 || i === 2 || i === 3 ? "cursor-pointer" : ""}`}
+                  className={`group w-full md:w-[40vw] lg:w-[25vw] h-[20vh] md:h-[25vh] bg-black p-4 rounded-lg flex flex-row items-start relative ${i === 1 || i === 2 || i === 3 ? "cursor-pointer" : ""}`}
                   onMouseMove={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect()
                     const x = e.clientX - rect.left
@@ -197,7 +195,7 @@ export default function Home() {
                   />
 
                   <div className="ml-[5%] w-[50%] flex flex-col relative z-10">
-                    <h3 className="text-sm sm:text-lg md:text-xl font-['American_Captain'] text-white">
+                    <h3 className={`text-sm md:text-lg lg:text-xl ${classicFont} text-white`}>
                       {i === 1
                         ? "Sphere using Three.js"
                         : i === 2
@@ -206,7 +204,7 @@ export default function Home() {
                             ? "Upendo"
                             : "Sphere using Three.js"}
                     </h3>
-                    <p className="text-[0.65rem] sm:text-xs md:text-sm text-white/60 mt-2 line-clamp-5">
+                    <p className="text-[0.65rem] md:text-xs lg:text-sm text-white/60 mt-2 line-clamp-5">
                       {i === 1
                         ? "Dit is een project waarmee ik gebruik maak van THREE.js om een Sphere rond te laten draaien."
                         : i === 2
@@ -237,11 +235,11 @@ export default function Home() {
         </div>
 
         <div
-          className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+          className="absolute top-[90%] mt-2 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
           onClick={() => {
             const element = document.querySelector("#about")
             if (element instanceof HTMLElement) {
-              const navbarHeight = 100 // Height of navbar
+              const navbarHeight = 100
               window.scrollTo({
                 top: element.offsetTop - navbarHeight,
                 behavior: "smooth",
@@ -249,36 +247,34 @@ export default function Home() {
             }
           }}
         >
-          <span className="text-2xl sm:text-4xl font-['American_Captain'] font-bold mb-2 text-black">ABOUT ME</span>
-          <ChevronDown className="w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
-          <ChevronDown className="absolute bottom-2 w-4 h-4 sm:w-6 sm:h-6 transition-transform group-hover:translate-y-1 text-black" />
+          <span className={`text-2xl md:text-4xl ${classicFont} font-bold mb-2 text-black`}>ABOUT ME</span>
+          <ChevronDown className="w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:translate-y-1 text-black" />
+          <ChevronDown className="absolute bottom-2 w-4 h-4 md:w-6 md:h-6 transition-transform group-hover:translate-y-1 text-black" />
         </div>
       </section>
       <section
         id="about"
-        className="relative min-h-screen bg-[#1E1E1E] text-white p-4 sm:p-6 md:p-8 flex flex-col justify-start pt-[10vh] pb-[10vh]"
+        className="relative min-h-screen bg-[#1E1E1E] text-white p-4 md:p-6 lg:p-8 flex flex-col justify-start pt-[10vh] pb-[10vh]"
       >
-        {/* Animated background elements */}
         <div className="absolute inset-0 bg-[#1E1E1E]">
-          {/* Geometric shapes */}
           <div className="absolute w-full h-full overflow-hidden">
-            <div className="absolute top-0 left-0 w-[400px] sm:w-[600px] md:w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4 hidden md:block"></div>
-            <div className="absolute top-1/4 right-0 w-[300px] sm:w-[450px] md:w-[600px] h-[3px] bg-gray-300/35 -rotate-45 hidden md:block"></div>
-            <div className="absolute bottom-1/3 left-0 w-[200px] sm:w-[300px] md:w-[400px] h-[3px] bg-gray-300/35 rotate-45 hidden md:block"></div>
+            <div className="absolute top-0 left-0 w-[400px] md:w-[600px] lg:w-[800px] h-[3px] bg-gray-300/35 rotate-45 transform -translate-x-1/4 hidden md:block"></div>
+            <div className="absolute top-1/4 right-0 w-[300px] md:w-[450px] lg:w-[600px] h-[3px] bg-gray-300/35 -rotate-45 hidden md:block"></div>
+            <div className="absolute bottom-1/3 left-0 w-[200px] md:w-[300px] lg:w-[400px] h-[3px] bg-gray-300/35 rotate-45 hidden md:block"></div>
 
-            <div className="absolute top-[20%] left-[10%] w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] border-[3px] border-gray-300/35 rounded-full hidden md:block"></div>
-            <div className="absolute top-[60%] right-[15%] w-[75px] sm:w-[100px] md:w-[150px] h-[75px] sm:h-[100px] md:h-[150px] border-[3px] border-gray-300/35 rounded-full hidden md:block"></div>
+            <div className="absolute top-[20%] left-[10%] w-[50px] md:w-[75px] lg:w-[100px] h-[50px] md:h-[75px] lg:h-[100px] border-[3px] border-gray-300/35 rounded-full hidden md:block"></div>
+            <div className="absolute top-[60%] right-[15%] w-[75px] md:w-[100px] lg:w-[150px] h-[75px] md:h-[100px] lg:h-[150px] border-[3px] border-gray-300/35 rounded-full hidden md:block"></div>
 
-            <div className="absolute top-[40%] left-[80%] w-[40px] sm:w-[60px] md:w-[80px] h-[40px] sm:h-[60px] md:h-[80px] border-[3px] border-gray-300/35 rotate-45 hidden md:block"></div>
-            <div className="absolute top-[70%] left-[20%] w-[30px] sm:w-[45px] md:w-[60px] h-[30px] sm:h-[45px] md:h-[60px] border-[3px] border-gray-300/35 rotate-12 hidden md:block"></div>
+            <div className="absolute top-[40%] left-[80%] w-[40px] md:w-[60px] lg:w-[80px] h-[40px] md:h-[60px] lg:h-[80px] border-[3px] border-gray-300/35 rotate-45 hidden md:block"></div>
+            <div className="absolute top-[70%] left-[20%] w-[30px] md:w-[45px] lg:w-[60px] h-[30px] md:h-[45px] lg:h-[60px] border-[3px] border-gray-300/35 rotate-12 hidden md:block"></div>
           </div>
         </div>
 
         <div className="relative z-10 mb-6">
-          <h1 className="text-4xl sm:text-5xl md:text-[4.0rem] font-['American_Captain'] font-bold text-center mb-3 sm:mb-4">
+          <h1 className={`text-4xl md:text-5xl lg:text-[4.0rem] ${classicFont} font-bold text-center mb-3 md:mb-4`}>
             ABOUT ME
           </h1>
-          <p className="text-center text-[13px] sm:text-lg md:text-[19px] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-center text-[13px] md:text-lg lg:text-[19px] max-w-3xl mx-auto leading-relaxed">
             Ik ben Roy van Heeswijk, 19 jaar oud en woon in Drunen, waar ik geboren en opgegroeid ben. Ik studeer ICT &
             Media Design aan Fontys in Tilburg.
             <br />
@@ -293,7 +289,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10">
-          <h2 className="text-4xl sm:text-5xl md:text-[4.0rem] font-['American_Captain'] font-bold text-center mb-6">
+          <h2 className={`text-4xl md:text-5xl lg:text-[4.0rem] ${classicFont} font-bold text-center mb-6`}>
             SKILLS
           </h2>
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto px-4">
@@ -323,9 +319,9 @@ export default function Home() {
                   alt={skill.name}
                   width={40}
                   height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10 brightness-0 invert"
+                  className="w-8 h-8 md:w-10 md:h-10 brightness-0 invert"
                 />
-                <span className="text-xs sm:text-sm text-center">{skill.name}</span>
+                <span className="text-xs md:text-sm text-center">{skill.name}</span>
               </a>
             ))}
           </div>
@@ -334,4 +330,3 @@ export default function Home() {
     </main>
   )
 }
-
